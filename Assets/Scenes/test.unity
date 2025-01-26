@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &152041040 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2477017681721256234, guid: fb789bb82e62ff445b3aa9fbb0e21f86, type: 3}
+  m_PrefabInstance: {fileID: 1974642209}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &764499865 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5240659333715012600, guid: fb789bb82e62ff445b3aa9fbb0e21f86, type: 3}
@@ -138,7 +143,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spline: {fileID: 986004876}
   maxSpeed: 3
+  jumpForce: 5
   lookAheadDistance: 0.1
+  gravity: -9.81
+  rampCenter: {fileID: 152041040}
+  playerAngelToCenter: 40
 --- !u!1 &986004875
 GameObject:
   m_ObjectHideFlags: 0
@@ -3765,15 +3774,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 974238578794577267}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.13540563, y: -0.1974973, z: 0.027486103, w: -0.97051775}
-  m_LocalPosition: {x: -0.28177214, y: -34.61, z: -7.24}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.235, y: -34.78, z: 2.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6900890504599495451}
   - {fileID: 3675218591050193232}
   m_Father: {fileID: 2119775931066240419}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 15.884, y: -252.699, z: 0.008}
 --- !u!1 &548967301342901446
 GameObject:
   m_ObjectHideFlags: 0

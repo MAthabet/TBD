@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Splines;
@@ -11,6 +12,9 @@ public class SplineMoving : MonoBehaviour
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private float lookAheadDistance = 0.1f;
     [SerializeField] private float gravity = -9.81f;
+    [SerializeField] private Transform rampCenter;
+    public float playerAngelToCenter = 40;
+    float lookingAngle = 40;
 
     private float currentPos;
     float splineLength;
@@ -63,15 +67,24 @@ public class SplineMoving : MonoBehaviour
 
         Vector3 movement = targetPos - transform.position;
         controller.Move(movement);
-
-        tangent = spline.transform.TransformVector(tangent);
-        Vector3 tang = tangent;
-        Vector3 lookDirection = Quaternion.Euler(30f, 0f, 0f) * tang.normalized;
+        Vector3 rampCenterToPlayer = rampCenter.position;
+        rampCenterToPlayer.y = transform.position.y;
+        Vector3 directionToCenter = (rampCenterToPlayer - transform.position).normalized;
+        Vector3 lookDirection = Quaternion.Euler(0f, lookingAngle, 0f) * directionToCenter;
+        lookDirection.y = 0;
         transform.rotation = Quaternion.LookRotation(lookDirection);
     }
 
     void OnMove(InputValue val)
     {
+        if(val.Get<float>() < 0)
+        {
+            lookingAngle = playerAngelToCenter;
+        }
+        else if (val.Get<float>() > 0)
+        {
+            lookingAngle = playerAngelToCenter - 90;
+        }
         currentSpeed = -val.Get<float>() * maxSpeed;
     }
 
