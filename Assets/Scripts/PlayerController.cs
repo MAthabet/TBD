@@ -59,7 +59,6 @@ public class SplineMoving : MonoBehaviour
         float normalizedPos = currentPos / splineLength;
         spline.Spline.Evaluate(normalizedPos, out var pos, out var tangent, out var _);
         Vector3 targetPos = spline.transform.TransformPoint(pos);
-        
         if (!isGrounded)
         {
             targetPos.y = transform.position.y;
