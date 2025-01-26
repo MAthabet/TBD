@@ -8,6 +8,7 @@ public class EnemyLogic : MonoBehaviour
     [SerializeField] private float jumpHeight = 2f;
     [SerializeField] private float moveSpeed = 3f;
     [SerializeField] private float yDetectionThreshold = 2f;
+    public float Damage;
 
     private Transform player;
     private CharacterController controller;
@@ -41,6 +42,9 @@ public class EnemyLogic : MonoBehaviour
         {
             Vector3 directionToPlayer = (player.position - transform.position).normalized;
             Vector3 movement = directionToPlayer * moveSpeed;
+            
+            // Make enemy look at player
+            transform.LookAt(new Vector3(player.position.x, transform.position.y, player.position.z));
             
             if (canJump && !hasJumped && distanceToPlayer <= attackRange * 1.5f)
             {

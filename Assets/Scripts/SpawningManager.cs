@@ -30,7 +30,7 @@ public class SpawningManager : MonoBehaviour
         float randomSplinePosition = Random.Range(0f, 1f);
         Vector3 targetPosition = spline.EvaluatePosition(randomSplinePosition);
         GameObject enemy = Instantiate(enemyPrefabs[randomEnemyIndex], transform.position, Quaternion.identity);
-        
+        targetPosition.y += enemy.GetComponent<CharacterController>().height/2;
         Vector3 throwDirection = (targetPosition - transform.position).normalized;
         StartCoroutine(MoveEnemyAlongTrajectory(enemy, throwDirection, targetPosition));
     }

@@ -4266,7 +4266,7 @@ Transform:
   m_GameObject: {fileID: 8047161635979831446}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.25, y: -1.45, z: -7.26}
+  m_LocalPosition: {x: 0.27, y: -1.45, z: -7.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4995,11 +4995,11 @@ PrefabInstance:
     - target: {fileID: 1700972929096685886, guid: 3991ebd425b80a84e9fc2dfc0c047cc4, type: 3}
       propertyPath: 'enemyPrefabs.Array.data[0]'
       value: 
-      objectReference: {fileID: 3358198856067956757, guid: 2424b9e95771c154b96bb5adced0a686, type: 3}
+      objectReference: {fileID: 3172726329758611985, guid: 21fa955f0a76c7749b05b61c531665d2, type: 3}
     - target: {fileID: 1700972929096685886, guid: 3991ebd425b80a84e9fc2dfc0c047cc4, type: 3}
       propertyPath: 'enemyPrefabs.Array.data[1]'
       value: 
-      objectReference: {fileID: 8846949103674710397, guid: 5ee7278c3ba581045b3ddb0f0548fc20, type: 3}
+      objectReference: {fileID: 2514956028270780477, guid: 78238b52a203fdf44a0297ceea186ae4, type: 3}
     - target: {fileID: 1738547155708822035, guid: 3991ebd425b80a84e9fc2dfc0c047cc4, type: 3}
       propertyPath: m_Name
       value: Boss
@@ -5728,7 +5728,7 @@ Transform:
   m_GameObject: {fileID: 4708105552797209919}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.157, y: 6.41, z: -9.99}
+  m_LocalPosition: {x: -2.792, y: 6.41, z: -9.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
