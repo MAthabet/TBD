@@ -58,8 +58,15 @@ public class SplineMoving : MonoBehaviour
 
     private void UpdatePosOnSpline()
     {
-        currentPos = Mathf.Clamp(currentPos + currentSpeed * Time.deltaTime, 0f, splineLength);
-        
+        float nextPos = Mathf.Clamp(currentPos + currentSpeed * Time.deltaTime, 0f, splineLength);
+
+        if(currentPos == nextPos)
+        {
+            animator.SetFloat("Velocity",0);
+            return;
+        }
+
+        currentPos = nextPos;
         float normalizedPos = currentPos / splineLength;
         spline.Spline.Evaluate(normalizedPos, out var pos, out var tangent, out var _);
         Vector3 targetPos = spline.transform.TransformPoint(pos);
@@ -76,6 +83,8 @@ public class SplineMoving : MonoBehaviour
         Vector3 lookDirection = Quaternion.Euler(0f, lookingAngle, 0f) * directionToCenter;
         lookDirection.y = 0;
         transform.rotation = Quaternion.LookRotation(lookDirection);
+        animator.SetFloat("Velocity", Mathf.Abs(currentSpeed/maxSpeed));
+        Debug.Log(currentSpeed / maxSpeed);
     }
 
     void OnMove(InputValue val)
@@ -88,21 +97,23 @@ public class SplineMoving : MonoBehaviour
         {
             lookingAngle = playerAngelToCenter - 90;
         }
-        currentSpeed = -val.Get<float>() * maxSpeed;
+        currentSpeed = -val.Get<float>() * walkingSpeed;
     }
 
     void OnJump()
     {
-        Debug.Log("Jump");
         if (isGrounded)
         {
-            Debug.Log("Jumping");
             velocity.y = jumpForce;
             isGrounded = false;
         }
     }
-    void onAccelerate()
+    void OnAccelerate()
     {
-
+        Debug.Log("Accelerate");
+        if (isGrounded)
+        {
+            currentSpeed *= maxSpeed;
+        }
     }
 }

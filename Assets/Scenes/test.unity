@@ -140,11 +140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab5c7d4c32e743048dfca98e2d5914f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1119199971 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6009707972796019124, guid: 605c04feef7766646878d32cc2d6028a, type: 3}
-  m_PrefabInstance: {fileID: 1228294599}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1228294599
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -155,7 +150,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6009707972796019124, guid: 605c04feef7766646878d32cc2d6028a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2.36
       objectReference: {fileID: 0}
     - target: {fileID: 6009707972796019124, guid: 605c04feef7766646878d32cc2d6028a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -163,7 +158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6009707972796019124, guid: 605c04feef7766646878d32cc2d6028a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 6009707972796019124, guid: 605c04feef7766646878d32cc2d6028a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -193,6 +188,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.008
       objectReference: {fileID: 0}
+    - target: {fileID: 6527779011496723158, guid: 605c04feef7766646878d32cc2d6028a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6701219739017177947, guid: 605c04feef7766646878d32cc2d6028a, type: 3}
       propertyPath: m_Name
       value: Character
@@ -210,6 +209,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 605c04feef7766646878d32cc2d6028a, type: 3}
+--- !u!4 &1444598543 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7346436256413609874, guid: 605c04feef7766646878d32cc2d6028a, type: 3}
+  m_PrefabInstance: {fileID: 1228294599}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1576290620
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,7 +543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8ffd0be16c7e6a4a8bdfc1ad78504e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1119199971}
+  player: {fileID: 1444598543}
   staircaseCenter: {fileID: 764499865}
   distanceFromPlayer: 5
   smoothSpeed: 5
