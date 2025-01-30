@@ -9,6 +9,8 @@ public class SplineMoving : MonoBehaviour
 {
     [SerializeField] private SplineContainer spline;
     [SerializeField] private float maxSpeed = 3f;
+    [SerializeField] private float walkingSpeed = 1f;
+    [SerializeField] private float accelrate = 3f;
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private float lookAheadDistance = 0.1f;
     [SerializeField] private float gravity = -9.81f;
@@ -23,12 +25,14 @@ public class SplineMoving : MonoBehaviour
     CharacterController controller;
     private Vector3 velocity;
     private float lastYPos;
+    private Animator animator;
 
     void Start()
     {
         splineLength = spline.Spline.GetLength();
         controller = GetComponent<CharacterController>();
         lastYPos = transform.position.y;
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -96,5 +100,9 @@ public class SplineMoving : MonoBehaviour
             velocity.y = jumpForce;
             isGrounded = false;
         }
+    }
+    void onAccelerate()
+    {
+
     }
 }
