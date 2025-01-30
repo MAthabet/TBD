@@ -20,6 +20,7 @@ public class SplineMoving : MonoBehaviour
     float splineLength;
     float currentSpeed;
     bool isGrounded = true;
+    public bool isAttacking = false;
     CharacterController controller;
     private Vector3 velocity;
     private float lastYPos;
@@ -96,5 +97,16 @@ public class SplineMoving : MonoBehaviour
             velocity.y = jumpForce;
             isGrounded = false;
         }
+    }
+
+    void OnAttack()
+    {
+        if (!isAttacking)
+            attack();
+    }
+    void attack()
+    {
+        isAttacking = true;
+
     }
 }
