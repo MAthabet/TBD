@@ -326,6 +326,10 @@ PrefabInstance:
       propertyPath: rampCenter
       value: 
       objectReference: {fileID: 152041040}
+    - target: {fileID: 6448845759081744339, guid: 50fa61123b639424abbb067bb5356f61, type: 3}
+      propertyPath: playerAngelToCenter
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 8050174379218072572, guid: 50fa61123b639424abbb067bb5356f61, type: 3}
       propertyPath: m_Name
       value: 'lowpoly_character '
