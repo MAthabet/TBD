@@ -12,6 +12,7 @@ public class SplineMoving : MonoBehaviour
     [SerializeField] private float maxSpeed = 3f;
     [SerializeField] private float walkingSpeed = 1f;
     [SerializeField] private float accelrate = 3f;
+    [SerializeField] private float acceleration = 0.3f;
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private float lookAheadDistance = 0.1f;
     [SerializeField] private float gravity = -9.81f;
@@ -33,6 +34,8 @@ public class SplineMoving : MonoBehaviour
     private float lastYPos;
     private Animator animator;
     private int currentAttack = 1;
+    float animatorVelocity = 0.1f;
+    float decelration = 0;
 
     void Start()
     {
@@ -109,8 +112,9 @@ public class SplineMoving : MonoBehaviour
         Vector3 lookDirection = Quaternion.Euler(0f, lookingAngle, 0f) * directionToCenter;
         lookDirection.y = 0;
         transform.rotation = Quaternion.LookRotation(lookDirection);
-
-        animator.SetFloat("Velocity", Mathf.Abs(currentSpeed/maxSpeed));
+        if(animatorVelocity < 1.0f)
+            animatorVelocity += Time.deltaTime * acceleration;
+        animator.SetFloat("Velocity", animatorVelocity);
     }
 
     void OnMove(InputValue val)
@@ -124,6 +128,7 @@ public class SplineMoving : MonoBehaviour
             lookingAngle = playerAngelToCenter - 90;
         }
         currentSpeed = -val.Get<float>() * walkingSpeed;
+        animatorVelocity = 0.1f;
     }
 
     void OnJump()

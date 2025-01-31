@@ -8,10 +8,10 @@ public class EnemyItemDrop : MonoBehaviour
     private int totalItemsInArray = 0;
     private Transform enemyPos;
 
-    private EnemyHealth EnemyHealth;
+    private Health EnemyHealth;
     void Start()
     {
-        EnemyHealth = GetComponent<EnemyHealth>();
+        EnemyHealth = GetComponent<Health>();
 
         foreach(GameObject item in itemList)
         {
@@ -28,18 +28,19 @@ public class EnemyItemDrop : MonoBehaviour
         //   DropItem();
         //}
 
-        if (EnemyHealth.isdeadcheck == true)
+        if (EnemyHealth.currentHealth <= 0)
         {
             Debug.Log("alooooo");
             DropItem();
-            Destroy(gameObject);
+            EnemyHealth.Die();
+            //Destroy(gameObject);
         }
     }
 
     void DropItem()
     {
         //enemy health script.isdeadcheck = false;
-        EnemyHealth.isdeadcheck = false;
+        //EnemyHealth.currentHealth = false;
         enemyPos = GetComponent<Transform>().transform.GetChild(0).transform;
         Instantiate(itemList[itemIndex], enemyPos.position, Quaternion.identity);
     }

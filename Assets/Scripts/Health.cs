@@ -3,14 +3,14 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     public float Maxhealth = 100f;
-    private float currentHealth;
+    public float currentHealth;
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
             Debug.Log("currentHealt:"+ currentHealth);
         if (currentHealth <= 0)
         {
-            Die();
+            //Die();
         }
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -19,7 +19,7 @@ public class Health : MonoBehaviour
         currentHealth = Maxhealth;
 
     }
-    void Die()
+    public void Die()
     {
         Destroy(gameObject);
     }

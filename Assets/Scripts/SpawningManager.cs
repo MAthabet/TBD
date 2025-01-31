@@ -46,15 +46,18 @@ public class SpawningManager : MonoBehaviour
 
         while (!reachedTarget)
         {
-            enemy.transform.position = startPos + initialVelocity * time;
-
-            if (Vector3.Distance(enemy.transform.position, target) < 0.1f)
+            if (enemy != null)
             {
-                reachedTarget = true;
-            }
+                enemy.transform.position = startPos + initialVelocity * time;
 
-            time += Time.deltaTime;
-            yield return null;
+                if (Vector3.Distance(enemy.transform.position, target) < 0.1f)
+                {
+                    reachedTarget = true;
+                }
+
+                time += Time.deltaTime;
+                yield return null;
+            }
         }
     }
 
