@@ -7,12 +7,12 @@ public class EnemyItemDrop : MonoBehaviour
     private int itemIndex;
     private int totalItemsInArray = 0;
     private Transform enemyPos;
-
+    private Animator animator;
     private Health EnemyHealth;
     void Start()
     {
         EnemyHealth = GetComponent<Health>();
-
+        animator = GetComponent<Animator>();
         foreach(GameObject item in itemList)
         {
             totalItemsInArray++;
@@ -36,7 +36,8 @@ public class EnemyItemDrop : MonoBehaviour
             //Destroy(gameObject);
         }
     }
-
+   
+    
     void DropItem()
     {
         //enemy health script.isdeadcheck = false;

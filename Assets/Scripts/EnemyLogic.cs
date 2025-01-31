@@ -16,6 +16,7 @@ public class EnemyLogic : MonoBehaviour
     private bool hasJumped;
     private float verticalVelocity;
     private float gravity = -9.81f;
+    
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -32,6 +33,7 @@ public class EnemyLogic : MonoBehaviour
             verticalVelocity = -2f;
             hasJumped = false;
         }
+        
 
         verticalVelocity += gravity * Time.deltaTime;
 

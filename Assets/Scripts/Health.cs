@@ -34,7 +34,27 @@ public class Health : MonoBehaviour
     }
     public void Die()
     {
-        animator.SetTrigger("Death");
+        // Start the death coroutine
+        
+        StartCoroutine(DeathRoutine());
+    }
+    
+
+    private System.Collections.IEnumerator DeathRoutine()
+    {
+        // Trigger the death animation
+        if (animator != null)
+        {
+            animator.SetTrigger("Death");
+        }
+        else
+        {
+            Debug.LogError("Animator is not assigned!");
+        }
+
+        yield return new WaitForSeconds(2.5f);
+
+        // Destroy the enemy after the animation completes
         Destroy(gameObject);
     }
 
