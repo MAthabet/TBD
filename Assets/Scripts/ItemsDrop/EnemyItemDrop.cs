@@ -28,7 +28,7 @@ public class EnemyItemDrop : MonoBehaviour
         //   DropItem();
         //}
 
-        if (EnemyHealth.currentHealth <= 0)
+        if (EnemyHealth.GetCurrentHealth() <= 0)
         {
             Debug.Log("alooooo");
             DropItem();
