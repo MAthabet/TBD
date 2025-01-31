@@ -7,9 +7,11 @@ public class SpawningManager : MonoBehaviour
     [SerializeField] private GameObject[] enemyPrefabs;
     [SerializeField] private SplineContainer spline;
     [SerializeField] private float throwSpeed = 10f;
-    
+    [SerializeField] private float throwIntervals = 3f;
+
     private float nextSpawnTime;
     private float spawnDelay;
+
     private void Start()
     {
         SetNextSpawnTime();
@@ -58,7 +60,7 @@ public class SpawningManager : MonoBehaviour
 
     private void SetNextSpawnTime()
     {
-        spawnDelay = Random.Range(0.2f, 1f);
+        spawnDelay = Random.Range(throwIntervals, throwIntervals+1.5f);
         nextSpawnTime = Time.time + spawnDelay;
     }
 }

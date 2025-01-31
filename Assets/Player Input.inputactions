@@ -26,11 +26,20 @@
                 {
                     "name": "Attack",
                     "type": "Button",
-                    "id": "51b39733-8fe6-4a81-bcc8-e01d86e8ad22",
+                    "id": "89b0abce-02bd-4ad8-ba36-d89004580a05",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Accelerate",
+                    "type": "Value",
+                    "id": "acf47b72-04be-421d-93b5-2f5848409343",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -179,14 +188,47 @@
                 },
                 {
                     "name": "",
-                    "id": "3669d7e6-1f23-4fc5-aa42-ab2e23856102",
-                    "path": "<Mouse>/rightButton",
+                    "id": "2c2177e8-f4c8-4983-8d06-c669ec890359",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "4e381a90-d59a-4f0a-8c50-5a4da6f8df7d",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accelerate",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "positive",
+                    "id": "243ecdf0-1ca6-441c-beb0-4aca63614d19",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accelerate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "16c2a683-5814-4ffe-bf2f-8d9d25011a1b",
+                    "path": "<Keyboard>/rightShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accelerate",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }
