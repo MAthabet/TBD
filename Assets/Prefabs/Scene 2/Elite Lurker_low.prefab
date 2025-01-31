@@ -214,6 +214,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 61d1932c059f1214cae22b75c263b9c1, type: 3}
       insertIndex: -1
       addedObject: {fileID: -2156704446452692277}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 61d1932c059f1214cae22b75c263b9c1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6731850330100060483}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 61d1932c059f1214cae22b75c263b9c1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 294905727503433547}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 61d1932c059f1214cae22b75c263b9c1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4371996480942004576}
   m_SourcePrefab: {fileID: 100100000, guid: 61d1932c059f1214cae22b75c263b9c1, type: 3}
 --- !u!1 &3172726329758611985 stripped
 GameObject:
@@ -263,4 +272,53 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6731850330100060483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3172726329758611985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ba903cb2bdc174fa96e90fc83938a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemList:
+  - {fileID: 2758686436591510268, guid: d5b039602372db14c938a85cd957e0fc, type: 3}
+  - {fileID: 6259964696847722967, guid: 5fa52dcb8620d2a41bd1334dd0d04d72, type: 3}
+--- !u!114 &294905727503433547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3172726329758611985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0d87540ab87ada41924f5217009a2fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isdeadcheck: 0
+--- !u!65 &4371996480942004576
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3172726329758611985}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
