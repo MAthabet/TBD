@@ -81,14 +81,4 @@ public class EnemyLogic : MonoBehaviour
             animator.SetTrigger("Attack");
         }
     }
-    private void gitHit()
-    {
-        //gitHit logic
-        animator.SetTrigger("Hit");
-    }
-    private void Die()
-    {
-        //Die logic
-        animator.SetTrigger("Death");
-    }
 }
