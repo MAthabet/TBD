@@ -4,7 +4,6 @@ public class EnemyLogic : MonoBehaviour
 {
     [SerializeField] private bool canJump;
     [SerializeField] private float attackRange = 2f;
-    [SerializeField] private float detectionRange = 5f;
     [SerializeField] private float jumpHeight = 2f;
     [SerializeField] private float moveSpeed = 3f;
     [SerializeField] private float yDetectionThreshold = 2f;
@@ -12,6 +11,7 @@ public class EnemyLogic : MonoBehaviour
 
     private Transform player;
     private CharacterController controller;
+    private Animator animator;
     private bool isAttacking;
     private bool hasJumped;
     private float verticalVelocity;
@@ -21,6 +21,7 @@ public class EnemyLogic : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         controller = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -35,11 +36,11 @@ public class EnemyLogic : MonoBehaviour
 
         verticalVelocity += gravity * Time.deltaTime;
 
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
         float yDifference = Mathf.Abs(transform.position.y - player.position.y);
 
-        if (yDifference <= yDetectionThreshold && distanceToPlayer <= detectionRange)
+        if (yDifference <= yDetectionThreshold)
         {
+            float distanceToPlayer = Vector3.Distance(transform.position, player.position);
             Vector3 directionToPlayer = (player.position - transform.position).normalized;
             Vector3 movement = directionToPlayer * moveSpeed;
             
@@ -52,18 +53,24 @@ public class EnemyLogic : MonoBehaviour
                 hasJumped = true;
             }
 
-            movement.y = verticalVelocity;
-            controller.Move(movement * Time.deltaTime);
 
             if (distanceToPlayer <= attackRange)
             {
                 Attack();
+                animator.SetBool("Run", false);
+            }
+            else
+            {
+                movement.y = verticalVelocity;
+                controller.Move(movement * Time.deltaTime);
+                animator.SetBool("Run", true);
             }
         }
         else
         {
             controller.Move(new Vector3(0, verticalVelocity, 0) * Time.deltaTime);
             isAttacking = false;
+            animator.SetBool("Run", false);
         }
     }
 
@@ -72,7 +79,7 @@ public class EnemyLogic : MonoBehaviour
         if (!isAttacking)
         {
             isAttacking = true;
-            // Attack logic here
+            animator.SetTrigger("Attack");
         }
     }
 }

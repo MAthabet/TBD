@@ -330,6 +330,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'lowpoly_character '
       objectReference: {fileID: 0}
+    - target: {fileID: 8131596181135744755, guid: 50fa61123b639424abbb067bb5356f61, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
