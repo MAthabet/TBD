@@ -119,11 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!4 &152041040 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2477017681721256234, guid: fb789bb82e62ff445b3aa9fbb0e21f86, type: 3}
-  m_PrefabInstance: {fileID: 1974642209}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &764499865 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5240659333715012600, guid: fb789bb82e62ff445b3aa9fbb0e21f86, type: 3}
@@ -274,9 +269,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 173517286982826323, guid: 50fa61123b639424abbb067bb5356f61, type: 3}
-      propertyPath: m_Enabled
-      value: 0
+    - target: {fileID: 783751071941989009, guid: 50fa61123b639424abbb067bb5356f61, type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 783751071941989009, guid: 50fa61123b639424abbb067bb5356f61, type: 3}
+      propertyPath: lookSenetivity
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 4030728048560572303, guid: 50fa61123b639424abbb067bb5356f61, type: 3}
       propertyPath: m_LocalPosition.x
@@ -284,7 +283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4030728048560572303, guid: 50fa61123b639424abbb067bb5356f61, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -36.73
+      value: -33.61
       objectReference: {fileID: 0}
     - target: {fileID: 4030728048560572303, guid: 50fa61123b639424abbb067bb5356f61, type: 3}
       propertyPath: m_LocalPosition.z
@@ -318,21 +317,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6448845759081744339, guid: 50fa61123b639424abbb067bb5356f61, type: 3}
-      propertyPath: spline
-      value: 
-      objectReference: {fileID: 986004876}
-    - target: {fileID: 6448845759081744339, guid: 50fa61123b639424abbb067bb5356f61, type: 3}
-      propertyPath: rampCenter
-      value: 
-      objectReference: {fileID: 152041040}
     - target: {fileID: 8050174379218072572, guid: 50fa61123b639424abbb067bb5356f61, type: 3}
       propertyPath: m_Name
       value: 'lowpoly_character '
       objectReference: {fileID: 0}
     - target: {fileID: 8131596181135744755, guid: 50fa61123b639424abbb067bb5356f61, type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      propertyPath: m_MinMoveDistance
+      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

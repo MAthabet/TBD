@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5240659333715012600}
   m_Layer: 7
   m_Name: Railway
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
