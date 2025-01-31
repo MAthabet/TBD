@@ -87,6 +87,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e3866a9811fb3604cb88f79a9e66ffe6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1142781717291237180}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e3866a9811fb3604cb88f79a9e66ffe6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3089848869635322416}
   m_SourcePrefab: {fileID: 100100000, guid: e3866a9811fb3604cb88f79a9e66ffe6, type: 3}
 --- !u!1 &8298250772307289599 stripped
 GameObject:
@@ -118,3 +121,22 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.0035, z: 0}
+--- !u!114 &-3089848869635322416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8298250772307289599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fac1f2926a866fe469d8c4a7d7b821cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canJump: 0
+  attackRange: 2
+  detectionRange: 5
+  jumpHeight: 2
+  moveSpeed: 3
+  yDetectionThreshold: 2
+  Damage: 0

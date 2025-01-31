@@ -16,11 +16,12 @@ public class EnemyLogic : MonoBehaviour
     private bool hasJumped;
     private float verticalVelocity;
     private float gravity = -9.81f;
-
+    Animator animator;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         controller = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -54,7 +55,7 @@ public class EnemyLogic : MonoBehaviour
 
             movement.y = verticalVelocity;
             controller.Move(movement * Time.deltaTime);
-
+            animator.SetBool("isRunning", true);
             if (distanceToPlayer <= attackRange)
             {
                 Attack();
@@ -64,6 +65,7 @@ public class EnemyLogic : MonoBehaviour
         {
             controller.Move(new Vector3(0, verticalVelocity, 0) * Time.deltaTime);
             isAttacking = false;
+            animator.SetBool("isRunning", false);
         }
     }
 
@@ -71,8 +73,20 @@ public class EnemyLogic : MonoBehaviour
     {
         if (!isAttacking)
         {
+            animator.SetBool("isRunning", false);
+            animator.SetTrigger("Attack");
             isAttacking = true;
             // Attack logic here
         }
+    }
+    private void gitHit()
+    {
+        //gitHit logic
+        animator.SetTrigger("Hit");
+    }
+    private void Die()
+    {
+        //Die logic
+        animator.SetTrigger("Death");
     }
 }

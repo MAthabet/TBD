@@ -43,7 +43,7 @@ public class SplineMoving : MonoBehaviour
         {
             velocity.y += gravity * Time.deltaTime;
             controller.Move(velocity * Time.deltaTime);
-            
+
             if (controller.isGrounded)
             {
                 velocity.y = 0;
@@ -55,7 +55,7 @@ public class SplineMoving : MonoBehaviour
     private void UpdatePosOnSpline()
     {
         currentPos = Mathf.Clamp(currentPos + currentSpeed * Time.deltaTime, 0f, splineLength);
-        
+
         float normalizedPos = currentPos / splineLength;
         spline.Spline.Evaluate(normalizedPos, out var pos, out var tangent, out var _);
         Vector3 targetPos = spline.transform.TransformPoint(pos);
@@ -76,15 +76,18 @@ public class SplineMoving : MonoBehaviour
 
     void OnMove(InputValue val)
     {
-        if(val.Get<float>() < 0)
+        float moveInput = val.Get<float>();
+
+        if (moveInput < 0)
         {
             lookingAngle = playerAngelToCenter;
         }
-        else if (val.Get<float>() > 0)
+        else if (moveInput > 0)
         {
             lookingAngle = playerAngelToCenter - 90;
         }
-        currentSpeed = -val.Get<float>() * maxSpeed;
+
+        currentSpeed = -moveInput * maxSpeed;
     }
 
     void OnJump()
@@ -97,4 +100,8 @@ public class SplineMoving : MonoBehaviour
             isGrounded = false;
         }
     }
+
+    
+
+   
 }
