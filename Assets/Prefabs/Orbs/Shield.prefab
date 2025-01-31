@@ -187,7 +187,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4684199111472906559, guid: 0faa21aad986eaf47976f42711f09073, type: 3}
+  - {fileID: 2100000, guid: a1da1e17f0b10644395ae501d9464c9f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -311,6 +311,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTag: Player
   powerUpType: 2
+  getSpikeArmor: 0
+  getShield: 0
 --- !u!135 &776975323662652237
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -519,7 +521,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7441676177057208678, guid: 0faa21aad986eaf47976f42711f09073, type: 3}
+  - {fileID: 2100000, guid: 161da2a1e7fb1a946b62ca0e365d5d77, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -605,7 +607,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3840551633604374677, guid: 0faa21aad986eaf47976f42711f09073, type: 3}
+  - {fileID: 2100000, guid: 7bcddbb43f167e54b92691c713e4b1ac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9116102136897707493, guid: f1ffeeafa59e1144e965c383030841bd, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 117fa0c863a97e74c8bce3e948e50bcf, type: 2}
+    - target: {fileID: -8721894258434176961, guid: f1ffeeafa59e1144e965c383030841bd, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: db4461e0f649c0644a47794bdf5f6f71, type: 2}
     - target: {fileID: -8679921383154817045, guid: f1ffeeafa59e1144e965c383030841bd, type: 3}
       propertyPath: m_LocalScale.x
       value: 230
@@ -64,6 +72,18 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -6524470464369223125, guid: f1ffeeafa59e1144e965c383030841bd, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cb7dc98508ba2ef48bb889ed637cd524, type: 2}
+    - target: {fileID: -5474124042828134790, guid: f1ffeeafa59e1144e965c383030841bd, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7efcf3a0f63f48d49b6228a115f3a723, type: 2}
+    - target: {fileID: -1349484110077643368, guid: f1ffeeafa59e1144e965c383030841bd, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b04046b6d2bb6ec43b1060503184f82d, type: 2}
     - target: {fileID: 919132149155446097, guid: f1ffeeafa59e1144e965c383030841bd, type: 3}
       propertyPath: m_Name
       value: Elite
@@ -72,6 +92,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1056578132394635434, guid: f1ffeeafa59e1144e965c383030841bd, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e837992619a92114f8ff699806917746, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -175,7 +199,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Maxhealth: 100
-  currentHealth: 0
 --- !u!114 &2766315307652555097
 MonoBehaviour:
   m_ObjectHideFlags: 0

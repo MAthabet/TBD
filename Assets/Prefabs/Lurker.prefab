@@ -72,6 +72,26 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.16524543
       objectReference: {fileID: 0}
+    - target: {fileID: -4342320507755291179, guid: e3866a9811fb3604cb88f79a9e66ffe6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 758944d15a5431c49973a45faeacc9d1, type: 2}
+    - target: {fileID: -2286751857246726322, guid: e3866a9811fb3604cb88f79a9e66ffe6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f7d4728882a8e4340a0760f927dcd360, type: 2}
+    - target: {fileID: -659126455369733834, guid: e3866a9811fb3604cb88f79a9e66ffe6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 110a10f3aacc7cf439fa3b21cf1d1fea, type: 2}
+    - target: {fileID: -3300520160034615, guid: e3866a9811fb3604cb88f79a9e66ffe6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3a969f9ec17efc24298739ccfafb2e3c, type: 2}
+    - target: {fileID: 437593971859182702, guid: e3866a9811fb3604cb88f79a9e66ffe6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 96937b091f79c894c8a22f8bcd4e9fbc, type: 2}
     - target: {fileID: 919132149155446097, guid: e3866a9811fb3604cb88f79a9e66ffe6, type: 3}
       propertyPath: m_Name
       value: Lurker
@@ -88,6 +108,10 @@ PrefabInstance:
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7231129367112697866, guid: e3866a9811fb3604cb88f79a9e66ffe6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 82d89a2c0876f9646ac227de877aaee9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -166,7 +190,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Maxhealth: 100
-  currentHealth: 0
 --- !u!114 &1524053563238924342
 MonoBehaviour:
   m_ObjectHideFlags: 0
