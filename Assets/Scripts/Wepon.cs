@@ -14,9 +14,10 @@ public class Wepon : MonoBehaviour
             }
             else
             {
+
+            Debug.Log("Hit");
                 other.GetComponent<Health>().TakeDamage(damage);
             }
-            Debug.Log("Hit");
             
         }
     }
