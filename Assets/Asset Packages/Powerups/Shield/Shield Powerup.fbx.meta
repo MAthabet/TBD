@@ -3,22 +3,7 @@ guid: 409571185a4432e4c9727e94c6c9113d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Shield1
-    second: {fileID: 2100000, guid: 161da2a1e7fb1a946b62ca0e365d5d77, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Shield_Decal1
-    second: {fileID: 2100000, guid: 7bcddbb43f167e54b92691c713e4b1ac, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Shield_Strap
-    second: {fileID: 2100000, guid: a1da1e17f0b10644395ae501d9464c9f, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

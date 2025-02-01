@@ -3,17 +3,7 @@ guid: 6881ae04adf17064184402647cea52c6
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Armorbody
-    second: {fileID: 2100000, guid: b90d4a33eac6dfc4bb3776467a056e34, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Spikes1
-    second: {fileID: 2100000, guid: 8ef731b0fca374f448c3b7f2d7e8457c, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

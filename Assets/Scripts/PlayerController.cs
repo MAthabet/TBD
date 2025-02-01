@@ -1,154 +1,106 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Splines;
-using static Unity.Burst.Intrinsics.Arm;
+using System.Collections;
 
-public class SplineMoving : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private SplineContainer spline;
-    [SerializeField] private float maxSpeed = 3f;
-    [SerializeField] private float walkingSpeed = 1f;
-    [SerializeField] private float accelrate = 3f;
-    [SerializeField] private float acceleration = 0.3f;
+    [SerializeField] private float walkSpeed = 5f;
+    [SerializeField] private float sprintSpeed = 8f;
     [SerializeField] private float jumpForce = 5f;
-    [SerializeField] private float lookAheadDistance = 0.1f;
     [SerializeField] private float gravity = -9.81f;
-    [SerializeField] private Transform rampCenter;
+
     [SerializeField] private float attackRange = 2f;
     [SerializeField] private float attackAngle = 60f;
-    [SerializeField] private float magicDamageMultiplier = 2f;
-    public float playerAngelToCenter = 40;
-    float lookingAngle = 40;
 
-    private float currentPos;
-    float splineLength;
-    float currentSpeed;
-    float targetSpeed;
-    bool isGrounded = true;
-    bool isAccelerating = false;
-    bool isAttacking = false;
-    CharacterController controller;
+    [SerializeField] private float acceleration = 8f;
+    [SerializeField] private float deceleration = 12f;
+
+    [SerializeField] private float rotationSpeed = 720f;
+
+    Vector2 moveInput;
+    private CharacterController controller;
     private Vector3 velocity;
-    private float lastYPos;
+    private bool isGrounded;
+    private bool isAttacking;
     private Animator animator;
     private int currentAttack = 1;
-    float animatorVelocity = 0.1f;
-
-    private PlayerStats ps;
+    private Vector3 currentVelocity;
+    private bool isSprinting;
+    private float currentSpeed;
 
     void Start()
     {
-        splineLength = spline.Spline.GetLength();
         controller = GetComponent<CharacterController>();
-        lastYPos = transform.position.y;
         animator = GetComponent<Animator>();
-        ps = GetComponent<PlayerStats>();
-        targetSpeed = 0;
+
+        isGrounded = true;
+        currentSpeed = 0;
     }
 
     private void Update()
     {
         if (!isAttacking)
         {
-            UpdatePosOnSpline();
+            HandleMovement();
             HandleGravity();
-            HandleAcceleration();
         }
-    }
-
-    private void HandleAcceleration()
-    {
-        if (currentSpeed == 0) return;
-        if (isAccelerating && isGrounded)
-        {
-            targetSpeed = currentSpeed > 0 ? maxSpeed : -maxSpeed;
-        }
-        else
-        {
-            targetSpeed = currentSpeed > 0 ? walkingSpeed : -walkingSpeed;
-        }
-        currentSpeed = Mathf.Lerp(currentSpeed, targetSpeed, accelrate * Time.deltaTime);
     }
 
     private void HandleGravity()
     {
-        if (!isGrounded)
+        isGrounded = controller.isGrounded;
+        if (isGrounded && velocity.y < 0)
         {
-            velocity.y += gravity * Time.deltaTime;
-            controller.Move(velocity * Time.deltaTime);
-            
-            if (controller.isGrounded)
-            {
-                velocity.y = 0;
-                isGrounded = true;
-            }
+            velocity.y = -2f;
         }
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
     }
-
-    private void UpdatePosOnSpline()
+    private void HandleMovement()
     {
-        float nextPos = Mathf.Clamp(currentPos + currentSpeed * Time.deltaTime, 0f, splineLength);
-
-        if(currentPos == nextPos)
+        // Convert input to camera relative direction
+        Vector3 forward = Camera.main.transform.forward;
+        Vector3 right = Camera.main.transform.right;
+        forward.y = 0;
+        right.y = 0;
+        forward = forward.normalized;
+        right = right.normalized;
+        Vector3 inputRaw = right * moveInput.x + forward * moveInput.y;
+        
+        if (inputRaw != Vector3.zero)
         {
-            animator.SetFloat("Velocity",0);
-            return;
+            float targetSpeed = isSprinting ? sprintSpeed : walkSpeed;
+            currentSpeed = targetSpeed;
+            currentVelocity = inputRaw.normalized * currentSpeed;
+
+            // Immediately rotate to face movement direction
+            transform.rotation = Quaternion.LookRotation(inputRaw);
+        }
+        else
+        {
+            currentSpeed = 0;
+            currentVelocity = Vector3.zero;
         }
 
-        currentPos = nextPos;
-        float normalizedPos = currentPos / splineLength;
-        spline.Spline.Evaluate(normalizedPos, out var pos, out var tangent, out var _);
-        Vector3 targetPos = spline.transform.TransformPoint(pos);
-        if (!isGrounded)
-        {
-            targetPos.y = transform.position.y;
-        }
-
-        Vector3 movement = targetPos - transform.position;
-        controller.Move(movement);
-        Vector3 rampCenterToPlayer = rampCenter.position;
-        rampCenterToPlayer.y = transform.position.y;
-        Vector3 directionToCenter = (rampCenterToPlayer - transform.position).normalized;
-        Vector3 lookDirection = Quaternion.Euler(0f, lookingAngle, 0f) * directionToCenter;
-        lookDirection.y = 0;
-        transform.rotation = Quaternion.LookRotation(lookDirection);
-        if(animatorVelocity < 1.0f)
-            animatorVelocity += Time.deltaTime * acceleration;
-        animator.SetFloat("Velocity", animatorVelocity);
+        controller.Move(currentVelocity * Time.deltaTime);
+        animator.SetFloat("Velocity", Mathf.Abs(currentSpeed) / sprintSpeed);
     }
 
-    void OnMove(InputValue val)
-    {        
-        if(val.Get<float>() < 0)
-        {
-            lookingAngle = playerAngelToCenter;
-        }
-        else if (val.Get<float>() > 0)
-        {
-            lookingAngle = playerAngelToCenter - 90;
-        }
-        currentSpeed = -val.Get<float>() * walkingSpeed;
-        animatorVelocity = 0.1f;
+    void OnAccelerate(InputValue value)
+    {
+        isSprinting = value.isPressed;
+    }
+
+    void OnMove(InputValue value)
+    {
+        moveInput = value.Get<Vector2>();
     }
 
     void OnJump()
     {
-        if (isAttacking) return;
-        
-        if (isGrounded)
-        {
-            velocity.y = jumpForce;
-            animator.SetTrigger("jump");
-            isGrounded = false;
-        }
-    }
-
-    void OnAccelerate(InputValue val)
-    {
-        isAccelerating = val.isPressed;
+        if (isAttacking || !isGrounded) return;
+        velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
+        animator.SetTrigger("jump");
     }
 
     void OnAttack()
@@ -183,39 +135,15 @@ public class SplineMoving : MonoBehaviour
 
         StartCoroutine(PerformAttack());
     }
-    void OnMagicAttack()
-    {
-        if (ps.currentMagicCharge <= 0) return;
-
-        GameObject boss = GameObject.FindGameObjectWithTag("Boss");
-        if (boss != null)
-        {
-            Vector3 directionToBoss = boss.transform.position - transform.position;
-            directionToBoss.y = 0;
-            transform.rotation = Quaternion.LookRotation(directionToBoss);
-
-            float chargePercentage = ps.currentMagicCharge / ps.maxMagicCharge;
-            float damage = Mathf.Pow(chargePercentage, 2) * magicDamageMultiplier;
-            
-            BossLogic bossLogic = boss.GetComponent<BossLogic>();
-            if (bossLogic != null)
-            {
-                bossLogic.TakeDamage(damage);
-            }
-        }
-
-        ps.currentMagicCharge = 0;
-    }
 
     private IEnumerator PerformAttack()
     {
         isAttacking = true;
         animator.SetInteger("Attack", currentAttack);
         currentAttack = currentAttack == 1 ? 2 : 1;
-        yield return new WaitForSeconds(2f); // Adjust this time based on your animation length
+        yield return new WaitForSeconds(2f);
 
         isAttacking = false;
         animator.SetInteger("Attack", 0);
     }
-
 }
