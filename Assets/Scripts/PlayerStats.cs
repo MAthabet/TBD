@@ -11,7 +11,7 @@ public class PlayerStats : MonoBehaviour
     public float currentHealth;
     public float currentMagicCharge;
     private float currentStamina;
-
+    Animator animator;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -34,6 +34,7 @@ public class PlayerStats : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
+            animator.SetTrigger("Death");
         }
     }
     void onCollectEssence()
