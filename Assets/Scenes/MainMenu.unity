@@ -1261,8 +1261,8 @@ MonoBehaviour:
   m_text: "Game Art:\n\r\nSalma Tamer\n \r\nRana Mahmoud \n\r\nMariam Habashy\n \r\nHasnaa
     Mahmoud\n\r\nYomna Fayyad"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 763062c7262d0a847abafe334af78a1d, type: 2}
-  m_sharedMaterial: {fileID: -6603203957315414223, guid: 763062c7262d0a847abafe334af78a1d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1685,6 +1685,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &8635547024534213455
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2720397617977532825, guid: 38c9c58165a7710408e56ddd859f7f3b, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008958938877953834, guid: 38c9c58165a7710408e56ddd859f7f3b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 843.7164
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008958938877953834, guid: 38c9c58165a7710408e56ddd859f7f3b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 527.26904
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008958938877953834, guid: 38c9c58165a7710408e56ddd859f7f3b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15.676387
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008958938877953834, guid: 38c9c58165a7710408e56ddd859f7f3b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008958938877953834, guid: 38c9c58165a7710408e56ddd859f7f3b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008958938877953834, guid: 38c9c58165a7710408e56ddd859f7f3b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008958938877953834, guid: 38c9c58165a7710408e56ddd859f7f3b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008958938877953834, guid: 38c9c58165a7710408e56ddd859f7f3b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008958938877953834, guid: 38c9c58165a7710408e56ddd859f7f3b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008958938877953834, guid: 38c9c58165a7710408e56ddd859f7f3b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 38c9c58165a7710408e56ddd859f7f3b, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1693,3 +1750,4 @@ SceneRoots:
   - {fileID: 489526274}
   - {fileID: 165072742}
   - {fileID: 1916620949}
+  - {fileID: 8635547024534213455}
