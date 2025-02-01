@@ -602,6 +602,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Elite
       objectReference: {fileID: 0}
+    - target: {fileID: 2809551896536691835, guid: 69ace79c4830a5e49848b8e2530f2934, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4075,6 +4079,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2339759708519745902, guid: 50fa61123b639424abbb067bb5356f61, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2576487556131107757, guid: 50fa61123b639424abbb067bb5356f61, type: 3}
       propertyPath: shieldTime
       value: 5
@@ -4147,6 +4155,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.y
       value: 0.012891738
       objectReference: {fileID: 0}
+    - target: {fileID: 6322072102446052063, guid: 50fa61123b639424abbb067bb5356f61, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6448845759081744339, guid: 50fa61123b639424abbb067bb5356f61, type: 3}
       propertyPath: spline
       value: 
@@ -4167,13 +4179,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'lowpoly_character '
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8131596181135744755, guid: 50fa61123b639424abbb067bb5356f61, type: 3}
+      propertyPath: m_Height
+      value: 3.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8131596181135744755, guid: 50fa61123b639424abbb067bb5356f61, type: 3}
+      propertyPath: m_Center.y
+      value: 1.6
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2090553064588872810, guid: 50fa61123b639424abbb067bb5356f61, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3277098366409392528, guid: 50fa61123b639424abbb067bb5356f61, type: 3}
       insertIndex: 0
       addedObject: {fileID: 1762011387}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8050174379218072572, guid: 50fa61123b639424abbb067bb5356f61, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1855843548}
   m_SourcePrefab: {fileID: 100100000, guid: 50fa61123b639424abbb067bb5356f61, type: 3}
 --- !u!1 &1738757252
 GameObject:
@@ -4204,11 +4228,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd29451eff4ff914d8f79f58174a02f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealthSlider: {fileID: 0}
-  bossHealthSlider: {fileID: 0}
-  magicChargeSlider: {fileID: 0}
-  itemSlots: []
-  images: []
 --- !u!4 &1738757254
 Transform:
   m_ObjectHideFlags: 0
@@ -4311,6 +4330,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5182820693866792781, guid: 867c572a5be680d42a042d2349f10143, type: 3}
   m_PrefabInstance: {fileID: 1762011386}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1855843541 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8050174379218072572, guid: 50fa61123b639424abbb067bb5356f61, type: 3}
+  m_PrefabInstance: {fileID: 1655624947}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1855843548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855843541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c291a5b726150194ba31157a80226ae0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  maxMagicCharge: 100
+  maxStamina: 100
+  pickedUp: 0000000000000000
+  currentHealth: 0
+  currentMagicCharge: 0
 --- !u!1001 &1974642209
 PrefabInstance:
   m_ObjectHideFlags: 0

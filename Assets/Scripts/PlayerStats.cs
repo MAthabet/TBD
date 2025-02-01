@@ -31,7 +31,7 @@ public class PlayerStats : MonoBehaviour
     public void onHit(float Damage)
     {
         currentHealth -= Damage;
-        //UiManager.Instance.UpdatePlayerHealthBar();
+        UiManager.Instance.UpdatePlayerHealthBar();
         //Debug.Log("health :"+ currentHealth);
         if (currentHealth <= 0)
         {
