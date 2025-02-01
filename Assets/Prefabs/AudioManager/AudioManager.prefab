@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2720397617977532825
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3008958938877953834}
+  - component: {fileID: 6067505284491782814}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3008958938877953834
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2720397617977532825}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 843.7164, y: 527.26904, z: -15.676387}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6067505284491782814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2720397617977532825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20b82d4ab7f59bb44ad4a0e121e24f5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicSounds:
+  - audioName: Storm
+    audioClip: {fileID: 8300000, guid: ef59c06b0b10b8e4e98271824eb88113, type: 3}
+    volume: 1
+    isLooping: 1
+    sfxSource: {fileID: 0}
+    musicSource: {fileID: 0}
+  - audioName: WindSea
+    audioClip: {fileID: 8300000, guid: da944b9579b9cee4e8ae1097c0bee72e, type: 3}
+    volume: 0.35
+    isLooping: 1
+    sfxSource: {fileID: 0}
+    musicSource: {fileID: 0}
+  sfxSounds:
+  - audioName: Minion-L
+    audioClip: {fileID: 8300000, guid: 395b9b3a08d75534eb23db1c1bc776b7, type: 3}
+    volume: 0.5
+    isLooping: 0
+    sfxSource: {fileID: 0}
+    musicSource: {fileID: 0}
+  - audioName: Minion-E
+    audioClip: {fileID: 8300000, guid: 4c57aa75059d36e41817a3c3bad0302f, type: 3}
+    volume: 0.5
+    isLooping: 0
+    sfxSource: {fileID: 0}
+    musicSource: {fileID: 0}
+  - audioName: PlayerAttack
+    audioClip: {fileID: 8300000, guid: 5d6a52321e28ec341889517ce6861ec4, type: 3}
+    volume: 0.5
+    isLooping: 0
+    sfxSource: {fileID: 0}
+    musicSource: {fileID: 0}

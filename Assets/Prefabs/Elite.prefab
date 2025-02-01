@@ -186,6 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fac1f2926a866fe469d8c4a7d7b821cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemySFXName: Minion-E
   canJump: 0
   attackRange: 2
   jumpHeight: 2
