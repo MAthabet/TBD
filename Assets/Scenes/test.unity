@@ -4296,6 +4296,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Red energy explosion
       objectReference: {fileID: 0}
+    - target: {fileID: 8378648546881499446, guid: 867c572a5be680d42a042d2349f10143, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5354097676405065749, guid: 867c572a5be680d42a042d2349f10143, type: 3}
@@ -4516,9 +4520,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 959536627}
   staircaseCenter: {fileID: 1849862441154513735}
-  distanceFromPlayer: 5
+  distanceFromCenter: 20
   smoothSpeed: 5
-  midPointOffset: -1
+  midPointOffset: 0
   offset: 2
 --- !u!33 &95924432069765205
 MeshFilter:

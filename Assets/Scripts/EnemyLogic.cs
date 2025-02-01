@@ -53,7 +53,7 @@ public class EnemyLogic : MonoBehaviour
                 verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
                 hasJumped = true;
             }
-            Debug.Log(distanceToPlayer);
+            //Debug.Log(distanceToPlayer);
             if (distanceToPlayer <= attackRange)
             {
                 Debug.Log("Attack");

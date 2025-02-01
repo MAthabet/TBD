@@ -8,8 +8,16 @@ public class Wepon : MonoBehaviour
     {
         if (other.gameObject.CompareTag(layerToHit))
         {
+            if (layerToHit == "Player")
+            {
+                other.GetComponent<PlayerStats>().onHit(damage);
+            }
+            else
+            {
+                other.GetComponent<Health>().TakeDamage(damage);
+            }
             Debug.Log("Hit");
-            other.GetComponent<Health>().TakeDamage(damage);
+            
         }
     }
 }
