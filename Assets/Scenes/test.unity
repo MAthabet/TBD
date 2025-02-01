@@ -3684,6 +3684,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4030728048560572303, guid: 50fa61123b639424abbb067bb5356f61, type: 3}
   m_PrefabInstance: {fileID: 1655624947}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &973543248 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8050174379218072572, guid: 50fa61123b639424abbb067bb5356f61, type: 3}
+  m_PrefabInstance: {fileID: 1655624947}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &973543255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973543248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c291a5b726150194ba31157a80226ae0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  maxMagicCharge: 100
+  maxStamina: 100
+  pickedUp: 0000000000000000
+  currentHealth: 0
+  currentMagicCharge: 0
 --- !u!1 &1052724328
 GameObject:
   m_ObjectHideFlags: 0
@@ -4167,13 +4190,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'lowpoly_character '
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2090553064588872810, guid: 50fa61123b639424abbb067bb5356f61, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3277098366409392528, guid: 50fa61123b639424abbb067bb5356f61, type: 3}
       insertIndex: 0
       addedObject: {fileID: 1762011387}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8050174379218072572, guid: 50fa61123b639424abbb067bb5356f61, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 973543255}
   m_SourcePrefab: {fileID: 100100000, guid: 50fa61123b639424abbb067bb5356f61, type: 3}
 --- !u!1 &1738757252
 GameObject:
@@ -4516,7 +4543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 959536627}
   staircaseCenter: {fileID: 1849862441154513735}
-  distanceFromPlayer: 5
+  distanceFromCenter: 15
   smoothSpeed: 5
   midPointOffset: -1
   offset: 2
