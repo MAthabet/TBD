@@ -3,6 +3,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] float Maxhealth = 100f;
+    bool dead = false;
     private float currentHealth;
     Animator animator;
     
@@ -11,21 +12,21 @@ public class Health : MonoBehaviour
     {
         currentHealth = Maxhealth;
         animator = GetComponent<Animator>();
-
     }
     public void TakeDamage(float damage)
     {
+        if (dead) return;
         currentHealth -= damage;
-        Debug.Log("currentHealt:" + currentHealth);
         if (currentHealth <= 0)
         {
-            //Die();
+            Die();
+            dead = true;
         }
         else animator.SetTrigger("Hit");
     }
     public void IncreaseCurrentHealth(float health)
     {
-         currentHealth+= health;
+        currentHealth+= health;
         if(currentHealth > Maxhealth) currentHealth = Maxhealth;
     }
     public float GetCurrentHealth()
@@ -33,28 +34,17 @@ public class Health : MonoBehaviour
         return currentHealth;
     }
     public void Die()
-    {
-        // Start the death coroutine
-        
+    {        
         StartCoroutine(DeathRoutine());
     }
     
 
     private System.Collections.IEnumerator DeathRoutine()
     {
-        // Trigger the death animation
-        if (animator != null)
-        {
-            animator.SetTrigger("Death");
-        }
-        else
-        {
-            Debug.LogError("Animator is not assigned!");
-        }
-
+        animator.SetTrigger("Death");
+        PickUpsManager.Instance.enemyItemDrop.DropItem(transform);
         yield return new WaitForSeconds(2.5f);
 
-        // Destroy the enemy after the animation completes
         Destroy(gameObject);
     }
 

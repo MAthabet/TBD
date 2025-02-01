@@ -1,13 +1,17 @@
 using UnityEngine;
+using static PickUpsManager;
 
 public class PlayerStats : MonoBehaviour
 {
-    [SerializeField] private float maxHealth = 100;
-    private float currentHealth;
-    [SerializeField] private float maxMagicCharge = 100;
-    private float currentMagicCharge;
-    [SerializeField] private float maxStamina = 100;
+    public float maxHealth = 100;
+    public float maxMagicCharge = 100;
+    public float maxStamina = 100;
+
+    public PickUps[] pickedUp = new PickUps[2];
+    public float currentHealth;
+    public float currentMagicCharge;
     private float currentStamina;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

@@ -6,43 +6,26 @@ public class EnemyItemDrop : MonoBehaviour
     public GameObject[] itemList;
     private int itemIndex;
     private int totalItemsInArray = 0;
-    private Transform enemyPos;
-    private Animator animator;
-    private Health EnemyHealth;
+    //private Transform enemyPos;
+    //private Animator animator;
+    //private Health EnemyHealth;
     void Start()
     {
-        EnemyHealth = GetComponent<Health>();
-        animator = GetComponent<Animator>();
-        foreach(GameObject item in itemList)
-        {
-            totalItemsInArray++;
-        }
+        //EnemyHealth = GetComponent<Health>();
+        //animator = GetComponent<Animator>();
+
+        totalItemsInArray = itemList.Length;
         // 4 items = 25% drop rate of all items
         itemIndex = Random.Range(0, totalItemsInArray);
-    }
-
-    void Update()
-    {
-        //if (enemy health script.isdeadcheck == true){
-
-        //   DropItem();
-        //}
-
-        if (EnemyHealth.GetCurrentHealth() <= 0)
-        {
-            Debug.Log("alooooo");
-            DropItem();
-            EnemyHealth.Die();
-            //Destroy(gameObject);
-        }
-    }
-   
+    }   
     
-    void DropItem()
+    public void DropItem(Transform deadEnemyPos)
     {
         //enemy health script.isdeadcheck = false;
         //EnemyHealth.currentHealth = false;
-        enemyPos = GetComponent<Transform>().transform.GetChild(0).transform;
-        Instantiate(itemList[itemIndex], enemyPos.position, Quaternion.identity);
+        //enemyPos = GetComponent<Transform>().transform.GetChild(0).transform;
+
+        itemIndex = Random.Range(0, totalItemsInArray);
+        Instantiate(itemList[itemIndex], deadEnemyPos.position, Quaternion.identity);
     }
 }
