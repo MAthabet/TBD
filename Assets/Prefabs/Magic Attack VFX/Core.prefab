@@ -4934,7 +4934,7 @@ MonoBehaviour:
   - {fileID: 1160501786613132708, guid: e68630037b6c11741b00f8a041ab0676, type: 3}
   - {fileID: 8794221191743425466, guid: 6e5a824f56791ab448e407230cbadad4, type: 3}
   - {fileID: 5544595391438825461, guid: 6334401a61aa8b942b4e49e8553181c6, type: 3}
-  player: {fileID: 1773666396872202295, guid: 50fa61123b639424abbb067bb5356f61, type: 3}
+  player: {fileID: 9038286166635601607, guid: 8910feb1beb0899458814b88baafd132, type: 3}
 --- !u!135 &681608872547725726
 SphereCollider:
   m_ObjectHideFlags: 0
