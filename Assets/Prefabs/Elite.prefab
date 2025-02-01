@@ -112,6 +112,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f1ffeeafa59e1144e965c383030841bd, type: 3}
       insertIndex: -1
       addedObject: {fileID: -6410246542599178740}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f1ffeeafa59e1144e965c383030841bd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2766315307652555097}
+    - targetCorrespondingSourceObject: {fileID: 2715566404302941441, guid: f1ffeeafa59e1144e965c383030841bd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2809551896536691835}
+    - targetCorrespondingSourceObject: {fileID: 2715566404302941441, guid: f1ffeeafa59e1144e965c383030841bd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7289320571350394817}
   m_SourcePrefab: {fileID: 100100000, guid: f1ffeeafa59e1144e965c383030841bd, type: 3}
 --- !u!1 &2171874348858796534 stripped
 GameObject:
@@ -196,3 +205,60 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Maxhealth: 100
+--- !u!114 &2766315307652555097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2171874348858796534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ba903cb2bdc174fa96e90fc83938a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemList:
+  - {fileID: 8032458344684232206, guid: f584571bec817b84682e1c4393d47171, type: 3}
+  - {fileID: 5685037776101690236, guid: 67145ac42b9b3634bb9514834e52d6f8, type: 3}
+  - {fileID: 3108027184847928210, guid: b6343721c6c7106418e5ca07011dd50e, type: 3}
+  - {fileID: 3196449444453559748, guid: b12b746118f15d94db7130e9edbed597, type: 3}
+--- !u!1 &3984213040776739238 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2715566404302941441, guid: f1ffeeafa59e1144e965c383030841bd, type: 3}
+  m_PrefabInstance: {fileID: 1361606507049768103}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2809551896536691835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3984213040776739238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c8fcec2a1866ae499757a93a5b5f51e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
+  layerToHit: Player
+--- !u!65 &7289320571350394817
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3984213040776739238}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0011301867, y: 0.0030982678, z: 0.0007466995}
+  m_Center: {x: -0.00004770189, y: 0.00042743003, z: 0.000022565926}
