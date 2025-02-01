@@ -5,12 +5,17 @@ public class BossLogic : MonoBehaviour
     private Transform player;
     [SerializeField] private float minHeight;
     [SerializeField] private float maxHeight;
+    public float MaxHP;
+    public float currentHP;
     private bool canMoveDown = true;
     private bool canMoveUp = true;
+
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        currentHP = MaxHP;
+        UiManager.Instance.UpdateBossHealthBar();
     }
 
     void Update()
@@ -40,5 +45,10 @@ public class BossLogic : MonoBehaviour
         Vector3 direction = player.position - transform.position;
         float angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, angle-180, 0);
+    }
+    public void TakeDamage(float dmaage)
+    {
+        currentHP -= dmaage;
+        UiManager.Instance.UpdateBossHealthBar();
     }
 }

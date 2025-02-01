@@ -19,6 +19,7 @@ public class SplineMoving : MonoBehaviour
     [SerializeField] private Transform rampCenter;
     [SerializeField] private float attackRange = 2f;
     [SerializeField] private float attackAngle = 60f;
+    [SerializeField] private float magicDamageMultiplier = 2f;
     public float playerAngelToCenter = 40;
     float lookingAngle = 40;
 
@@ -35,7 +36,8 @@ public class SplineMoving : MonoBehaviour
     private Animator animator;
     private int currentAttack = 1;
     float animatorVelocity = 0.1f;
-    float decelration = 0;
+
+    private PlayerStats ps;
 
     void Start()
     {
@@ -43,6 +45,7 @@ public class SplineMoving : MonoBehaviour
         controller = GetComponent<CharacterController>();
         lastYPos = transform.position.y;
         animator = GetComponent<Animator>();
+        ps = GetComponent<PlayerStats>();
         targetSpeed = 0;
     }
 
@@ -179,6 +182,29 @@ public class SplineMoving : MonoBehaviour
         }
 
         StartCoroutine(PerformAttack());
+    }
+    void OnMagicAttack()
+    {
+        if (ps.currentMagicCharge <= 0) return;
+
+        GameObject boss = GameObject.FindGameObjectWithTag("Boss");
+        if (boss != null)
+        {
+            Vector3 directionToBoss = boss.transform.position - transform.position;
+            directionToBoss.y = 0;
+            transform.rotation = Quaternion.LookRotation(directionToBoss);
+
+            float chargePercentage = ps.currentMagicCharge / ps.maxMagicCharge;
+            float damage = Mathf.Pow(chargePercentage, 2) * magicDamageMultiplier;
+            
+            BossLogic bossLogic = boss.GetComponent<BossLogic>();
+            if (bossLogic != null)
+            {
+                bossLogic.TakeDamage(damage);
+            }
+        }
+
+        ps.currentMagicCharge = 0;
     }
 
     private IEnumerator PerformAttack()

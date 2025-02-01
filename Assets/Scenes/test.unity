@@ -4087,7 +4087,6 @@ MonoBehaviour:
   magicChargeSlider: {fileID: 0}
   itemSlots: []
   images: []
-  bossMaxHP: 0
 --- !u!4 &1738757254
 Transform:
   m_ObjectHideFlags: 0
@@ -4427,6 +4426,10 @@ PrefabInstance:
     - target: {fileID: 6808080904088659754, guid: 6da5d1782dfdc3f4aa1383964abd30f6, type: 3}
       propertyPath: m_Name
       value: Octoboss_anim
+      objectReference: {fileID: 0}
+    - target: {fileID: 6808080904088659754, guid: 6da5d1782dfdc3f4aa1383964abd30f6, type: 3}
+      propertyPath: m_TagString
+      value: Boss
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

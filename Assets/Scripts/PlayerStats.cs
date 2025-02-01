@@ -30,6 +30,7 @@ public class PlayerStats : MonoBehaviour
     void onHit(float Damage)
     {
         currentHealth =-Damage;
+        UiManager.Instance.UpdatePlayerHealthBar();
         if (currentHealth <= 0)
         {
             Die();

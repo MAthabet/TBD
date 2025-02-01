@@ -53,9 +53,10 @@ public class EnemyLogic : MonoBehaviour
                 verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
                 hasJumped = true;
             }
-
+            Debug.Log(distanceToPlayer);
             if (distanceToPlayer <= attackRange)
             {
+                Debug.Log("Attack");
                 Attack();
                 //animator.SetBool("Run", false);
             }
@@ -78,9 +79,10 @@ public class EnemyLogic : MonoBehaviour
     {
         if (!isAttacking)
         {
-            //animator.SetBool("ٌRun", false);
             isAttacking = true;
             animator.SetTrigger("Attack");
         }
+        else if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+            isAttacking = false;
     }
 }
