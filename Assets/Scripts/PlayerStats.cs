@@ -27,11 +27,15 @@ public class PlayerStats : MonoBehaviour
     {
         
     }
-
+    public void IncreaseCurrentHealth(float health)
+    {
+        currentHealth += health;
+        if (currentHealth > maxHealth) currentHealth = maxHealth;
+    }
     public void onHit(float Damage)
     {
         currentHealth -= Damage;
-        UiManager.Instance.UpdatePlayerHealthBar();
+       // UiManager.Instance.UpdatePlayerHealthBar();
         //Debug.Log("health :"+ currentHealth);
         if (currentHealth <= 0)
         {

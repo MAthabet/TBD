@@ -33,7 +33,7 @@ public class PowerUp : MonoBehaviour
         {
             case PowerUpType.HealthBoost:
                 //make logic
-                Health playerHealth = player.GetComponent<Health>();
+                PlayerStats playerHealth = player.GetComponent<PlayerStats>();
                 playerHealth.IncreaseCurrentHealth(10);
                 break;
 
