@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -41,6 +42,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!isAttacking)
         {
+            isGrounded = Physics.Raycast(transform.position, -Vector3.up, 0.3f);
             HandleMovement();
             HandleGravity();
         }
@@ -48,12 +50,14 @@ public class PlayerController : MonoBehaviour
 
     private void HandleGravity()
     {
-        isGrounded = controller.isGrounded;
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
         }
+
         velocity.y += gravity * Time.deltaTime;
+        Debug.Log(isGrounded + "velo"+ velocity);
+
         controller.Move(velocity * Time.deltaTime);
     }
     private void HandleMovement()
@@ -80,8 +84,10 @@ public class PlayerController : MonoBehaviour
         {
             currentSpeed = 0;
             currentVelocity = Vector3.zero;
+            animator.SetFloat("Velocity", Mathf.Abs(currentSpeed) / sprintSpeed);
+            return;
         }
-
+        Debug.Log(isGrounded + "Cvel" + currentVelocity);
         controller.Move(currentVelocity * Time.deltaTime);
         animator.SetFloat("Velocity", Mathf.Abs(currentSpeed) / sprintSpeed);
     }
