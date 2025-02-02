@@ -30,10 +30,11 @@ public class PickUpsManager : MonoBehaviour
             return;
         }
         instance = this;
+        enemyItemDrop = FindObjectOfType<EnemyItemDrop>();
     }
     private void Start()
     {
-        enemyItemDrop = FindObjectOfType<EnemyItemDrop>();
+        //enemyItemDrop = FindObjectOfType<EnemyItemDrop>();
     }
 
     public enum PickUps

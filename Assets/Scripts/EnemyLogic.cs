@@ -80,7 +80,7 @@ public class EnemyLogic : MonoBehaviour
         {
             isAttacking = true;
             animator.SetTrigger("Attack");
-            AudioManager.Instance.PlaySFX("MinionSound");
+           // AudioManager.Instance.PlaySFX("MinionSound");
         }
         else if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
             isAttacking = false;

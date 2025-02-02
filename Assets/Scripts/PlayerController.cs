@@ -120,7 +120,7 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetTrigger("MagicAttack");
             p.currentMagicCharge -= p.currentMagicCharge * 0.3f;
-            UiManager.Instance.UpdateMagicCharge();
+           // UiManager.Instance.UpdateMagicCharge();
         }
     }
     void OnAttack()
@@ -161,7 +161,7 @@ public class PlayerController : MonoBehaviour
         isAttacking = true;
         animator.SetInteger("Attack", currentAttack);
         currentAttack = currentAttack == 1 ? 2 : 1;
-        //AudioManager.Instance.PlaySFX("PlayerAttack");
+
         yield return new WaitForSeconds(2f);
 
         isAttacking = false;

@@ -1,15 +1,5 @@
 fileFormatVersion: 2
 guid: c0752d6a2d871854eb3657ea338d9b66
-timeCreated: 1431354806
-licenseType: Store
-MonoImporter:
-  serializedVersion: 2
-  defaultReferences: []
-  executionOrder: 0
-  icon: {instanceID: 0}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
   productId: 16458
@@ -17,3 +7,12 @@ AssetOrigin:
   packageVersion: 1.1.3
   assetPath: Assets/PowerUp/Scripts/PowerUpManager.cs
   uploadId: 387662
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: -20
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
