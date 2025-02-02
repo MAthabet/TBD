@@ -18,27 +18,27 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: db4461e0f649c0644a47794bdf5f6f71, type: 2}
     - target: {fileID: -8679921383154817045, guid: f1ffeeafa59e1144e965c383030841bd, type: 3}
       propertyPath: m_LocalScale.x
-      value: 230
+      value: 280
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f1ffeeafa59e1144e965c383030841bd, type: 3}
       propertyPath: m_LocalScale.y
-      value: 230
+      value: 280
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f1ffeeafa59e1144e965c383030841bd, type: 3}
       propertyPath: m_LocalScale.z
-      value: 230
+      value: 280
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f1ffeeafa59e1144e965c383030841bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.25
+      value: 0.73
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f1ffeeafa59e1144e965c383030841bd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.411
+      value: 3.22
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f1ffeeafa59e1144e965c383030841bd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 24.42
+      value: 22.36
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f1ffeeafa59e1144e965c383030841bd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c8fcec2a1866ae499757a93a5b5f51e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 0
   layerToHit: Player
 --- !u!65 &7289320571350394817
 BoxCollider:
