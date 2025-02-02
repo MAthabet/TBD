@@ -6,7 +6,7 @@ public class BossLogic : MonoBehaviour
     [SerializeField] private float minHeight;
     [SerializeField] private float maxHeight;
     [SerializeField] private float offset;
-    public float MaxHP;
+    public float MaxHP = 90;
     public float currentHP;
     private bool canMoveDown = true;
     private bool canMoveUp = true;

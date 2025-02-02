@@ -8,7 +8,7 @@ public class MovingParticle : MonoBehaviour
     [SerializeField] private GameObject player;
     private ParticleSystem particleSystemComponent;
     private bool isMoving = false;
-
+    [SerializeField] private float damage = 30;
     void Start()
     {
         particleSystemComponent = GetComponent<ParticleSystem>();
@@ -23,7 +23,10 @@ public class MovingParticle : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("dds");
+        if (collision.gameObject.CompareTag("Boss"))
+        {
+            collision.gameObject.GetComponent<BossLogic>().TakeDamage(damage);
+        }
         if (collision.contacts.Length > 0)
         {
             Vector3 collisionPosition = collision.contacts[0].point;

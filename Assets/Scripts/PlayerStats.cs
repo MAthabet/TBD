@@ -44,7 +44,7 @@ public class PlayerStats : MonoBehaviour
             animator.SetTrigger("Death");
         }
     }
-    void onCollectEssence()
+    public void onCollectEssence()
     {
         currentMagicCharge += 10;
         UiManager.Instance.UpdateMagicCharge();

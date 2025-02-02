@@ -29,17 +29,18 @@ public class PowerUp : MonoBehaviour
     private void ApplyPowerUpEffect(PowerUpType type , Collider player)
     {
         PlayerPowerUpCollector collector = player.GetComponent<PlayerPowerUpCollector>();
+                PlayerStats playerHealth = player.GetComponent<PlayerStats>();
         switch (type)
         {
             case PowerUpType.HealthBoost:
                 //make logic
-                PlayerStats playerHealth = player.GetComponent<PlayerStats>();
                 playerHealth.IncreaseCurrentHealth(10);
                 break;
 
             case PowerUpType.PowerUpBoost:
                 //make logic
-                collector.CollectPowerUp();
+                playerHealth.onCollectEssence();
+                //collector.CollectPowerUp();
                 break;
 
             case PowerUpType.Shield:

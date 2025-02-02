@@ -113,7 +113,16 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger("jump");
         animator.SetBool("isGrounded", false);
     }
-
+    void OnMagicAttack()
+    {
+            PlayerStats p = GetComponent<PlayerStats>();
+        if ((p.currentMagicCharge/p.maxMagicCharge)*100 >= 50)
+        {
+            animator.SetTrigger("MagicAttack");
+            p.currentMagicCharge -= p.currentMagicCharge * 0.3f;
+            UiManager.Instance.UpdateMagicCharge();
+        }
+    }
     void OnAttack()
     {
         if (isAttacking) return;
@@ -146,7 +155,7 @@ public class PlayerController : MonoBehaviour
 
         StartCoroutine(PerformAttack());
     }
-
+    
     private IEnumerator PerformAttack()
     {
         isAttacking = true;
