@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
 using System;
+using UnityEngine.SceneManagement;
 
 public class PlayerControllerV2 : MonoBehaviour
 {
@@ -128,5 +129,9 @@ public class PlayerControllerV2 : MonoBehaviour
 
         isAttacking = false;
         animator.SetInteger("Attack", 0);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
