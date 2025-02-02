@@ -6,6 +6,8 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance;
     public Sound[] musicSounds, sfxSounds;
 
+    public float musicVolume, sfxVolume;
+
     private void Awake()
     {
         if (Instance == null)

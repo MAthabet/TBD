@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class EnemyLogic : MonoBehaviour
 {
-    [SerializeField] string enemySFXName;
     [SerializeField] private bool canJump;
     [SerializeField] private float attackRange = 2f;
     [SerializeField] private float jumpHeight = 2f;
@@ -81,9 +80,7 @@ public class EnemyLogic : MonoBehaviour
         {
             isAttacking = true;
             animator.SetTrigger("Attack");
-            AudioManager.Instance.PlaySFX(enemySFXName);
-            //Minion-L
-            //Minion-E
+            AudioManager.Instance.PlaySFX("MinionSound");
         }
         else if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
             isAttacking = false;

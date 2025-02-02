@@ -57,22 +57,24 @@ MonoBehaviour:
     isLooping: 1
     sfxSource: {fileID: 0}
     musicSource: {fileID: 0}
-  sfxSounds:
-  - audioName: Minion-L
-    audioClip: {fileID: 8300000, guid: 395b9b3a08d75534eb23db1c1bc776b7, type: 3}
-    volume: 0.5
-    isLooping: 0
+  - audioName: MainGameMusic
+    audioClip: {fileID: 8300000, guid: 29794636ee1809248bdf054b7cb438df, type: 3}
+    volume: 0.7
+    isLooping: 1
     sfxSource: {fileID: 0}
     musicSource: {fileID: 0}
-  - audioName: Minion-E
+  sfxSounds:
+  - audioName: MinionSound
     audioClip: {fileID: 8300000, guid: 4c57aa75059d36e41817a3c3bad0302f, type: 3}
-    volume: 0.5
+    volume: 0.3
     isLooping: 0
     sfxSource: {fileID: 0}
     musicSource: {fileID: 0}
   - audioName: PlayerAttack
     audioClip: {fileID: 8300000, guid: 5d6a52321e28ec341889517ce6861ec4, type: 3}
-    volume: 0.5
+    volume: 0.3
     isLooping: 0
     sfxSource: {fileID: 0}
     musicSource: {fileID: 0}
+  musicVolume: 0
+  sfxVolume: 0
