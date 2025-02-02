@@ -161,7 +161,7 @@ public class PlayerController : MonoBehaviour
         isAttacking = true;
         animator.SetInteger("Attack", currentAttack);
         currentAttack = currentAttack == 1 ? 2 : 1;
-        AudioManager.Instance.PlaySFX("PlayerAttack");
+        //AudioManager.Instance.PlaySFX("PlayerAttack");
         yield return new WaitForSeconds(2f);
 
         isAttacking = false;
