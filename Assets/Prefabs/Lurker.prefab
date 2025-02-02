@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lurker_Axe
       objectReference: {fileID: 0}
+    - target: {fileID: 5435477424733947582, guid: 34ed69755e72fcc49bb8baabf4d31933, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5649096822930412416, guid: 34ed69755e72fcc49bb8baabf4d31933, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.00262
@@ -116,43 +120,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e3866a9811fb3604cb88f79a9e66ffe6, type: 3}
       propertyPath: m_LocalScale.x
-      value: 230
+      value: 280
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e3866a9811fb3604cb88f79a9e66ffe6, type: 3}
       propertyPath: m_LocalScale.y
-      value: 230
+      value: 280
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e3866a9811fb3604cb88f79a9e66ffe6, type: 3}
       propertyPath: m_LocalScale.z
-      value: 230
+      value: 280
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e3866a9811fb3604cb88f79a9e66ffe6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.5310154
+      value: 3.17
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e3866a9811fb3604cb88f79a9e66ffe6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -36.044296
+      value: 4.49
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e3866a9811fb3604cb88f79a9e66ffe6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.3554888
+      value: 24.51
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e3866a9811fb3604cb88f79a9e66ffe6, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 0.9388632
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e3866a9811fb3604cb88f79a9e66ffe6, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.027344272
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e3866a9811fb3604cb88f79a9e66ffe6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: -0.34303153
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e3866a9811fb3604cb88f79a9e66ffe6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.010847049
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e3866a9811fb3604cb88f79a9e66ffe6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -899,6 +903,10 @@ PrefabInstance:
       value: Lurker
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e3866a9811fb3604cb88f79a9e66ffe6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e3866a9811fb3604cb88f79a9e66ffe6, type: 3}
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
@@ -1539,7 +1547,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySFXName: Minion-L
   canJump: 0
-  attackRange: 2
+  attackRange: 1.5
   jumpHeight: 2
   moveSpeed: 3
   yDetectionThreshold: 2
