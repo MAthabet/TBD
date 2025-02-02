@@ -53,7 +53,7 @@ public class BossLogic : MonoBehaviour
     public void TakeDamage(float dmaage)
     {
         currentHP -= dmaage;
-        //UiManager.Instance.UpdateBossHealthBar();
+        UiManager.Instance.UpdateBossHealthBar();
         if (currentHP <= 0 )
         {
             bossDie();

@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class UiManager : MonoBehaviour
 {
@@ -35,8 +34,6 @@ public class UiManager : MonoBehaviour
     [SerializeField] private Slider playerHealthSlider;
     [SerializeField] private Slider bossHealthSlider;
     [SerializeField] private Slider magicChargeSlider;
-    [SerializeField] private RawImage[] itemSlots;
-    [SerializeField] private Texture2D[] images;
 
     private PlayerStats playerStats;
     private BossLogic bossLogic;
@@ -68,11 +65,4 @@ public class UiManager : MonoBehaviour
         magicChargeSlider.value = playerStats.currentMagicCharge;
     }
 
-    public void UpdateInventoryDisplay()
-    {
-        for (int i = 0; i < playerStats.pickedUp.Length; i++)
-        {
-            itemSlots[i].texture = images[(int)playerStats.pickedUp[i]];
-        }
-    }
 }

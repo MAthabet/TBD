@@ -115,12 +115,10 @@ public class PlayerController : MonoBehaviour
     }
     void OnMagicAttack()
     {
-            PlayerStats p = GetComponent<PlayerStats>();
-        if ((p.currentMagicCharge/p.maxMagicCharge)*100 >= 50)
+        PlayerStats p = GetComponent<PlayerStats>();
+        if ((p.currentMagicCharge/p.maxMagicCharge) >= 0.3)
         {
             animator.SetTrigger("MagicAttack");
-            p.currentMagicCharge -= p.currentMagicCharge * 0.3f;
-           // UiManager.Instance.UpdateMagicCharge();
         }
     }
     void OnAttack()
@@ -167,5 +165,12 @@ public class PlayerController : MonoBehaviour
 
         isAttacking = false;
         animator.SetInteger("Attack", 0);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Kill"))
+        {
+            GetComponent<PlayerStats>().onHit(1000);
+        }
     }
 }

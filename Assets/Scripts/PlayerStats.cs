@@ -10,7 +10,6 @@ public class PlayerStats : MonoBehaviour
     public PickUps[] pickedUp = new PickUps[2];
     public float currentHealth;
     public float currentMagicCharge;
-    private float currentStamina;
     public bool isDead;
 
     [SerializeField] GameObject deathMenu;
@@ -34,12 +33,12 @@ public class PlayerStats : MonoBehaviour
     {
         currentHealth += health;
         if (currentHealth > maxHealth) currentHealth = maxHealth;
-        //UiManager.Instance.UpdatePlayerHealthBar();
+        UiManager.Instance.UpdatePlayerHealthBar();
     }
     public void onHit(float Damage)
     {
         currentHealth -= Damage;
-       // UiManager.Instance.UpdatePlayerHealthBar();
+        UiManager.Instance.UpdatePlayerHealthBar();
         if (currentHealth <= 0)
         {
             Die();
@@ -49,7 +48,7 @@ public class PlayerStats : MonoBehaviour
     public void onCollectEssence()
     {
         currentMagicCharge += 10;
-      //  UiManager.Instance.UpdateMagicCharge();
+        UiManager.Instance.UpdateMagicCharge();
     }
     public void Die()
     {

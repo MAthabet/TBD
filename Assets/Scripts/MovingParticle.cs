@@ -1,7 +1,6 @@
 using UnityEngine;
-using System.Collections.Generic;
-using UnityEngine.EventSystems;
-using TMPro;
+using System.Collections;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class MovingParticle : MonoBehaviour
 {
@@ -10,7 +9,6 @@ public class MovingParticle : MonoBehaviour
     [SerializeField] private GameObject player;
     private ParticleSystem particleSystemComponent;
     private bool isMoving = false;
-    [SerializeField] private float damage = 30;
     [SerializeField] GameObject boss;
     void Start()
     {
@@ -32,22 +30,14 @@ public class MovingParticle : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Boss"))
-        {
+            float damage = player.GetComponent<PlayerStats>().currentMagicCharge;
+            if (damage < 60) damage *= 1.5f;
+            else if(damage < 90) damage *= 2.0f;
+            else if (damage < 99)  damage *= 3.0f;
+            else damage *= 3.33f;
             collision.gameObject.GetComponent<BossLogic>().TakeDamage(damage);
-        }
-        if (collision.contacts.Length > 0)
-        {
-            Vector3 collisionPosition = collision.contacts[0].point;
-            foreach (var collideParticle in collideParticles)
-            {
-                ParticleSystem newParticle = Instantiate(collideParticle, collisionPosition, Quaternion.identity);
-                newParticle.transform.LookAt(player.transform.position);
-                newParticle.Play();
-            }
-            particleSystemComponent.Stop();
-            Destroy(gameObject);
-        }
+            player.GetComponent<PlayerStats>().currentMagicCharge = 0;
+            UiManager.Instance.UpdateMagicCharge();
     }
   
     public void StartMoving()

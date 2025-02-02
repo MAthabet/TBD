@@ -1546,7 +1546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canJump: 0
-  attackRange: 1.5
+  attackRange: 1
   jumpHeight: 2
   moveSpeed: 3
   yDetectionThreshold: 2
