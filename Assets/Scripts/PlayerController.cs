@@ -120,7 +120,7 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetTrigger("MagicAttack");
             p.currentMagicCharge -= p.currentMagicCharge * 0.3f;
-            UiManager.Instance.UpdateMagicCharge();
+           // UiManager.Instance.UpdateMagicCharge();
         }
     }
     void OnAttack()

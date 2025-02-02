@@ -4936,6 +4936,7 @@ MonoBehaviour:
   - {fileID: 5544595391438825461, guid: 6334401a61aa8b942b4e49e8553181c6, type: 3}
   player: {fileID: 9027762636665477776, guid: 79a195771127a524bb7a791dc68d391a, type: 3}
   damage: 30
+  boss: {fileID: 6808080904088659754, guid: 6da5d1782dfdc3f4aa1383964abd30f6, type: 3}
 --- !u!135 &681608872547725726
 SphereCollider:
   m_ObjectHideFlags: 0

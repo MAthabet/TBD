@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
+using TMPro;
 
 public class MovingParticle : MonoBehaviour
 {
@@ -9,16 +11,23 @@ public class MovingParticle : MonoBehaviour
     private ParticleSystem particleSystemComponent;
     private bool isMoving = false;
     [SerializeField] private float damage = 30;
+    [SerializeField] GameObject boss;
     void Start()
     {
         particleSystemComponent = GetComponent<ParticleSystem>();
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
     }
 
     void Update()
     {
-        if (isMoving && particleSystemComponent != null)
+        if (isMoving && particleSystemComponent != null && player != null)
         {
-            transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, boss.transform.position, moveSpeed * Time.deltaTime);
+
+            transform.LookAt(boss.transform.position);
         }
     }
     private void OnCollisionEnter(Collision collision)
@@ -40,45 +49,11 @@ public class MovingParticle : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        //Debug.Log("dsdfds");
-        //if (other.contacts.Length > 0)
-        //{
-        //    Vector3 collisionPosition = other.gameObject.transform.position;
-        //    foreach (var collideParticle in collideParticles)
-        //    {
-        //        ParticleSystem newParticle = Instantiate(collideParticle, collisionPosition, Quaternion.identity);
-        //        newParticle.Play();
-        //    }
-        //    particleSystemComponent.Stop();
-        //    Destroy(gameObject);
-        //}
-    }
-    private void OnTriggerStay(Collider other)
-    {
-        Debug.Log("stay");
-    }
+  
     public void StartMoving()
     {
         isMoving = true;
     }
 
-    //void OnParticleCollision(GameObject other)
-    //{
-    //    int numCollisionEvents = particleSystemComponent.GetCollisionEvents(other, collisionEvents);
-
-    //    for (int i = 0; i < numCollisionEvents; i++)
-    //    {
-    //        Vector3 collisionPosition = collisionEvents[i].intersection;
-
-    //        foreach (var collideParticle in collideParticles)
-    //        {
-    //            Instantiate(collideParticle, collisionPosition, Quaternion.identity);
-    //        }
-    //    }
-
-    //    particleSystemComponent.Stop();
-    //    Destroy(gameObject);
-    //}
+  
 }
