@@ -132,6 +132,8 @@ public class PlayerControllerV2 : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        AudioManager.Instance.StopAllMusic();
+        AudioManager.Instance.StopAllSFX();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

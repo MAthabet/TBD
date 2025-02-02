@@ -6,7 +6,36 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance;
     public Sound[] musicSounds, sfxSounds;
 
-    public float musicVolume, sfxVolume;
+    float musicVolume =  1; 
+    float sfxVolume = 1;
+
+    public void SetMusicVolume(float volume)
+    {
+        musicVolume = volume;
+
+        // Update volume for all currently playing music
+        foreach (Sound sound in musicSounds)
+        {
+            if (sound.musicSource != null)
+            {
+                sound.musicSource.volume = sound.volume * musicVolume;
+            }
+        }
+
+    }
+    public void SetsfxVolume(float volume)
+    {
+        sfxVolume = volume;
+
+        // Update volume for all currently playing SFX
+        foreach (Sound sound in sfxSounds)
+        {
+            if (sound.sfxSource != null)
+            {
+                sound.sfxSource.volume = sound.volume * sfxVolume;
+            }
+        }
+    }
 
     private void Awake()
     {
@@ -51,10 +80,49 @@ public class AudioManager : MonoBehaviour
         s.musicSource.Play();
     }
 
-    public void PlaySFX(string audioName) 
+
+    public void PlaySFX(string audioName)
     {
         Sound s = Array.Find(sfxSounds, sfxSounds => sfxSounds.audioName == audioName);
         s.sfxSource.Play();
+    }
+
+    public void StopMusic(string audioName)
+    {
+        Sound s = Array.Find(musicSounds, sound => sound.audioName == audioName);
+        if (s != null && s.musicSource.isPlaying)
+        {
+            s.musicSource.Stop();
+        }
+    }
+    public void StopSFX(string audioName)
+    {
+        Sound s = Array.Find(sfxSounds, sound => sound.audioName == audioName);
+        if (s != null && s.musicSource.isPlaying)
+        {
+            s.musicSource.Stop();
+        }
+    }
+
+    public void StopAllMusic()
+    {
+        foreach (Sound sound in musicSounds)
+        {
+            if (sound.musicSource.isPlaying)
+            {
+                sound.musicSource.Stop();
+            }
+        }
+    }
+    public void StopAllSFX()
+    {
+        foreach (Sound sound in sfxSounds)
+        {
+            if (sound.sfxSource.isPlaying)
+            {
+                sound.sfxSource.Stop();
+            }
+        }
     }
 
 }
