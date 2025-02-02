@@ -33,7 +33,7 @@ public class SpawningManager : MonoBehaviour
         float playerT = GetNearestPointOnSpline(player.position);
         int randomEnemyIndex = Random.Range(0, enemyPrefabs.Length);
         float randomSplinePosition = playerT + Random.Range(-Range, Range);
-        randomSplinePosition = Mathf.Clamp(randomSplinePosition, 0f, 1f);
+        randomSplinePosition = Mathf.Clamp(randomSplinePosition, 0.05f, 0.98f);
         Vector3 targetPosition = spline.EvaluatePosition(randomSplinePosition);
         GameObject enemy = Instantiate(enemyPrefabs[randomEnemyIndex], transform.position, Quaternion.identity);
         targetPosition.y += enemy.GetComponent<CharacterController>().height/2;
