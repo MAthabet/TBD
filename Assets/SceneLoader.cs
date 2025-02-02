@@ -9,6 +9,7 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] private TextMeshProUGUI text;
     void Start()
     {
+        AudioManager.Instance.PlayMusic("MainGameMusic");
         asyncOperation = SceneManager.LoadSceneAsync("Second Scene", LoadSceneMode.Additive);
         asyncOperation.allowSceneActivation = false;
     }
@@ -21,6 +22,7 @@ public class SceneLoader : MonoBehaviour
             text.enabled = true;
             if (Input.GetKey(KeyCode.Escape))
             {
+                AudioManager.Instance.StopMusic("MainGameMusic");
                 asyncOperation.allowSceneActivation = true;
                 SceneManager.UnloadSceneAsync("Story Scene");
 

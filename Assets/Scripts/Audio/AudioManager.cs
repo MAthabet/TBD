@@ -7,7 +7,7 @@ public class AudioManager : MonoBehaviour
     public Sound[] musicSounds, sfxSounds;
 
     float musicVolume =  1; 
-        float sfxVolume = 1;
+    float sfxVolume = 1;
 
     public void SetMusicVolume(float volume)
     {
@@ -95,6 +95,14 @@ public class AudioManager : MonoBehaviour
             s.musicSource.Stop();
         }
     }
+    public void StopSFX(string audioName)
+    {
+        Sound s = Array.Find(sfxSounds, sound => sound.audioName == audioName);
+        if (s != null && s.musicSource.isPlaying)
+        {
+            s.musicSource.Stop();
+        }
+    }
 
     public void StopAllMusic()
     {
@@ -103,6 +111,16 @@ public class AudioManager : MonoBehaviour
             if (sound.musicSource.isPlaying)
             {
                 sound.musicSource.Stop();
+            }
+        }
+    }
+    public void StopAllSFX()
+    {
+        foreach (Sound sound in sfxSounds)
+        {
+            if (sound.sfxSource.isPlaying)
+            {
+                sound.sfxSource.Stop();
             }
         }
     }
