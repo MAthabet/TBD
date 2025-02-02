@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 currentVelocity;
     private bool isSprinting;
     private float currentSpeed;
+    [SerializeField] GameObject boss;
 
     void Start()
     {
@@ -36,6 +37,9 @@ public class PlayerController : MonoBehaviour
 
         isGrounded = true;
         currentSpeed = 0;
+        AudioManager.Instance.PlayMusic("Storm");
+        AudioManager.Instance.PlayMusic("WindSea");
+        AudioManager.Instance.PlayMusic("MainGameMusic");
     }
 
     private void Update()
@@ -119,7 +123,23 @@ public class PlayerController : MonoBehaviour
         if ((p.currentMagicCharge/p.maxMagicCharge) >= 0.3)
         {
             animator.SetTrigger("MagicAttack");
+            StartCoroutine(PerformMagicAttack());
+            
         }
+
+    }
+    private IEnumerator PerformMagicAttack()
+    {
+        yield return new WaitForSeconds(1f);
+        float damage = GetComponent<PlayerStats>().currentMagicCharge;
+        if (damage < 60) damage *= 1.5f;
+        else if (damage < 90) damage *= 2.0f;
+        else if (damage < 99) damage *= 3.0f;
+        else damage *= 3.33f;
+        boss.GetComponent<BossLogic>().TakeDamage(damage);
+        Debug.Log("Damage: " + damage);
+        GetComponent<PlayerStats>().currentMagicCharge = 0;
+        UiManager.Instance.UpdateMagicCharge();
     }
     void OnAttack()
     {

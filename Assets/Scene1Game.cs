@@ -21,6 +21,7 @@ public class Scene1Game : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(cameraIsMoving);
         if (cameraIsMoving)
             transform.position = Vector3.Lerp(transform.position, target1.position, CamMoveSpeed * Time.deltaTime);
         if (player.position.z < 10)

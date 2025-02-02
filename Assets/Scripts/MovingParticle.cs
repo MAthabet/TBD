@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class MovingParticle : MonoBehaviour
 {
@@ -28,17 +27,19 @@ public class MovingParticle : MonoBehaviour
             transform.LookAt(boss.transform.position);
         }
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-            float damage = player.GetComponent<PlayerStats>().currentMagicCharge;
-            if (damage < 60) damage *= 1.5f;
-            else if(damage < 90) damage *= 2.0f;
-            else if (damage < 99)  damage *= 3.0f;
-            else damage *= 3.33f;
-            collision.gameObject.GetComponent<BossLogic>().TakeDamage(damage);
-            player.GetComponent<PlayerStats>().currentMagicCharge = 0;
-            UiManager.Instance.UpdateMagicCharge();
-    }
+    //private void OnCollisionEnter(Collision collsion)
+    //{
+    //        float damage = player.GetComponent<PlayerStats>().currentMagicCharge;
+    //        if (damage < 60) damage *= 1.5f;
+    //        else if(damage < 90) damage *= 2.0f;
+    //        else if (damage < 99)  damage *= 3.0f;
+    //        else damage *= 3.33f;
+    //        boss.GetComponent<BossLogic>().TakeDamage(damage);
+    //        Debug.Log("Damage: " + damage);
+    //        player.GetComponent<PlayerStats>().currentMagicCharge = 0;
+    //        UiManager.Instance.UpdateMagicCharge();
+    //        Destroy(gameObject);
+    //}
   
     public void StartMoving()
     {

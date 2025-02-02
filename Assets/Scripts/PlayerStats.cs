@@ -8,7 +8,7 @@ public class PlayerStats : MonoBehaviour
     public float maxStamina = 100;
 
     public PickUps[] pickedUp = new PickUps[2];
-    public float currentHealth;
+    public float currentHealth = 100;
     public float currentMagicCharge;
     public bool isDead;
 
@@ -20,15 +20,10 @@ public class PlayerStats : MonoBehaviour
     {
         currentHealth = maxHealth;
         currentMagicCharge = 0;
-        currentStamina = maxStamina;
         animator = GetComponent<Animator>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         
     }
+
     public void IncreaseCurrentHealth(float health)
     {
         currentHealth += health;

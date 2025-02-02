@@ -7,7 +7,6 @@ public class ButtonFunctions : MonoBehaviour
     [SerializeField] private GameObject player;
     public void PlayGame()
     {
-        Cursor.lockState = CursorLockMode.Locked;
         player.SetActive(true);
         maincam.GetComponent<Scene1Game>().cameraIsMoving = true;
     }

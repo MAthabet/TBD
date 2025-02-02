@@ -35,15 +35,18 @@ public class UiManager : MonoBehaviour
     [SerializeField] private Slider bossHealthSlider;
     [SerializeField] private Slider magicChargeSlider;
 
+    [SerializeField] GameObject player;
+    [SerializeField] GameObject boss;
     private PlayerStats playerStats;
     private BossLogic bossLogic;
 
     void Start()
     {
-        playerStats = FindObjectOfType<PlayerStats>();
-        bossLogic = FindObjectOfType<BossLogic>();
+        playerStats = player.GetComponent<PlayerStats>();
+        bossLogic = boss.GetComponent<BossLogic>();
 
-        playerHealthSlider.maxValue = playerStats.maxHealth;
+        playerHealthSlider.maxValue =100;
+        playerHealthSlider.value = 100;
         magicChargeSlider.maxValue = playerStats.maxMagicCharge;
         bossHealthSlider.maxValue = bossLogic.MaxHP;
         UpdateBossHealthBar();
@@ -63,6 +66,7 @@ public class UiManager : MonoBehaviour
     public void UpdateMagicCharge()
     {
         magicChargeSlider.value = playerStats.currentMagicCharge;
+        Debug.Log("Magic Charge: " + magicChargeSlider.value);
     }
 
 }
