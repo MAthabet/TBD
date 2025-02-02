@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class BossLogic : MonoBehaviour
@@ -10,7 +11,8 @@ public class BossLogic : MonoBehaviour
     public float currentHP;
     private bool canMoveDown = true;
     private bool canMoveUp = true;
-    
+    [SerializeField] GameObject winGameUI;
+
 
 
     void Start()
@@ -52,5 +54,14 @@ public class BossLogic : MonoBehaviour
     {
         currentHP -= dmaage;
         //UiManager.Instance.UpdateBossHealthBar();
+        if (currentHP <= 0 )
+        {
+            bossDie();
+        }
+    }
+
+    private void bossDie()
+    {
+        winGameUI.SetActive(true);
     }
 }
