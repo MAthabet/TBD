@@ -903,6 +903,10 @@ PrefabInstance:
       value: Lurker
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e3866a9811fb3604cb88f79a9e66ffe6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e3866a9811fb3604cb88f79a9e66ffe6, type: 3}
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
@@ -1543,7 +1547,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySFXName: Minion-L
   canJump: 0
-  attackRange: 2
+  attackRange: 0.5
   jumpHeight: 2
   moveSpeed: 3
   yDetectionThreshold: 2

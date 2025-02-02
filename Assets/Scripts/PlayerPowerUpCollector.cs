@@ -16,6 +16,8 @@ public class PlayerPowerUpCollector : MonoBehaviour
     [SerializeField] private float SpikeArmorTime = 5f;
     private int currentPowerUps = 0;
     bool pick = false;
+    public bool getSpikeArmor = false;
+    public bool getShield = false;
     private void Start()
     {
         if (powerUpSlider != null)
@@ -45,6 +47,8 @@ public class PlayerPowerUpCollector : MonoBehaviour
     }
     public void ActivateShield(PowerUpType type)
     {
+        if (type == PowerUpType.Shield) getShield = true;
+        if (type == PowerUpType.SpikeArmor) getSpikeArmor = true;
         if (pick)
         {
             if (type == PowerUpType.Shield || type == PowerUpType.SpikeArmor)
@@ -90,7 +94,8 @@ public class PlayerPowerUpCollector : MonoBehaviour
         {
             effect.SetActive(false);
         }
-
+        getShield = false;
+        getSpikeArmor = false;
         Debug.Log("Shield deactivated!");
     }
 }

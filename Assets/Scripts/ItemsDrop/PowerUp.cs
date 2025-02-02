@@ -8,6 +8,7 @@ public class PowerUp : MonoBehaviour
     [SerializeField] private PowerUpType powerUpType;
     public bool getSpikeArmor = false;
     public bool getShield = false;
+    
     public enum PowerUpType
     {
         HealthBoost,
@@ -47,6 +48,7 @@ public class PowerUp : MonoBehaviour
                 collector.ActivateShield(PowerUpType.Shield);
                 getShield = true;
                 //add can't take damage
+
                 break;
 
             case PowerUpType.SpikeArmor:
