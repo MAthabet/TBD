@@ -3,7 +3,22 @@ guid: 74f8a428a58f6fd4e8f152390cc4bb4f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ears_low
+    second: {fileID: 2100000, guid: 007ee9cecd91a5343a3747263360d70d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eye_low
+    second: {fileID: 2100000, guid: 5446793a68c4294438a51168596e6eee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Octo_low
+    second: {fileID: 2100000, guid: 6a94e2bc441c6654fa342dfc4456b571, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

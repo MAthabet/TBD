@@ -57,7 +57,6 @@ public class EnemyLogic : MonoBehaviour
             //Debug.Log(distanceToPlayer);
             if (distanceToPlayer <= attackRange)
             {
-                Debug.Log("I HATE MY LIVES");
                 Attack();
                 //animator.SetBool("Run", false);
             }
