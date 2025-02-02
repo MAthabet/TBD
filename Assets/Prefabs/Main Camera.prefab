@@ -152,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   staircaseCenter: {fileID: 0}
-  distanceFromCenter: 20
+  distanceFromCenter: 15
   smoothSpeed: 5
   midPointOffset: 0
   offset: 2

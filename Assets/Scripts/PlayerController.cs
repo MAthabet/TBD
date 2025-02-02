@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!isAttacking)
         {
-            isGrounded = Physics.Raycast(transform.position, -Vector3.up, 0.3f);
+            isGrounded = Physics.Raycast(transform.position, -Vector3.up, 0.1f);
             if(isGrounded)
             {
                 animator.SetBool("isGrounded", true);
