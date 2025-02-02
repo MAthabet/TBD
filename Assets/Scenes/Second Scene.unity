@@ -133,7 +133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6075870396713077922, guid: 79a195771127a524bb7a791dc68d391a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.88
+      value: 24.86
       objectReference: {fileID: 0}
     - target: {fileID: 6075870396713077922, guid: 79a195771127a524bb7a791dc68d391a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -166,6 +166,10 @@ PrefabInstance:
     - target: {fileID: 6075870396713077922, guid: 79a195771127a524bb7a791dc68d391a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8143882229430125045, guid: 79a195771127a524bb7a791dc68d391a, type: 3}
+      propertyPath: m_StepOffset
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9027762636665477776, guid: 79a195771127a524bb7a791dc68d391a, type: 3}
       propertyPath: m_Name
@@ -366,13 +370,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5021993017217839697, guid: 1446696390f78c544a62c7dbb9d39ed2, type: 3}
+      propertyPath: offset
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5021993017217839697, guid: 1446696390f78c544a62c7dbb9d39ed2, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1651858046}
     - target: {fileID: 5021993017217839697, guid: 1446696390f78c544a62c7dbb9d39ed2, type: 3}
       propertyPath: staircaseCenter
       value: 
-      objectReference: {fileID: 7394764133490714643}
+      objectReference: {fileID: 3860240793074412383}
     - target: {fileID: 8434308047681360821, guid: 1446696390f78c544a62c7dbb9d39ed2, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -438,6 +446,10 @@ PrefabInstance:
     - target: {fileID: 4803373473454350678, guid: 6da5d1782dfdc3f4aa1383964abd30f6, type: 3}
       propertyPath: MaxHP
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4803373473454350678, guid: 6da5d1782dfdc3f4aa1383964abd30f6, type: 3}
+      propertyPath: offset
+      value: -16
       objectReference: {fileID: 0}
     - target: {fileID: 4803373473454350678, guid: 6da5d1782dfdc3f4aa1383964abd30f6, type: 3}
       propertyPath: currentHP
@@ -506,6 +518,10 @@ PrefabInstance:
     - target: {fileID: 6808080904088659754, guid: 6da5d1782dfdc3f4aa1383964abd30f6, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8802981221271520600, guid: 6da5d1782dfdc3f4aa1383964abd30f6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2712,6 +2728,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d9b1c06ef742514a80194cae5251a61, type: 3}
+--- !u!4 &3860240793074412383 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4954012569303450455, guid: 3d9b1c06ef742514a80194cae5251a61, type: 3}
+  m_PrefabInstance: {fileID: 3860240793074412382}
+  m_PrefabAsset: {fileID: 0}
 --- !u!33 &3910155812619118831
 MeshFilter:
   m_ObjectHideFlags: 0

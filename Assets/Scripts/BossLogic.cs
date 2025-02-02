@@ -5,10 +5,12 @@ public class BossLogic : MonoBehaviour
     private Transform player;
     [SerializeField] private float minHeight;
     [SerializeField] private float maxHeight;
+    [SerializeField] private float offset;
     public float MaxHP;
     public float currentHP;
     private bool canMoveDown = true;
     private bool canMoveUp = true;
+    
 
 
     void Start()
@@ -21,7 +23,7 @@ public class BossLogic : MonoBehaviour
     {
         if (player == null) return;
         Vector3 newPosition = transform.position;
-        float targetY = player.position.y - 19;
+        float targetY = player.position.y + offset;
 
         if (targetY > transform.position.y && canMoveUp)
         {
