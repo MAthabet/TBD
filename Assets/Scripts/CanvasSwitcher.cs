@@ -40,11 +40,15 @@ public class PanelSwitcher : MonoBehaviour
         
         if (panel1IsActive)
         {
+            panel1.gameObject.SetActive(false);
+            panel2.gameObject.SetActive(true);
             panel1TargetPosition = new Vector2(-screenWidth, 0);
             panel2TargetPosition = Vector2.zero;
         }
         else
         {
+            panel1.gameObject.SetActive(true);
+            panel2.gameObject.SetActive(false);
             panel1TargetPosition = Vector2.zero;
             panel2TargetPosition = new Vector2(screenWidth, 0);
         }
