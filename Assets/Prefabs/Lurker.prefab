@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5435477424733947582, guid: 34ed69755e72fcc49bb8baabf4d31933, type: 3}
       propertyPath: damage
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5649096822930412416, guid: 34ed69755e72fcc49bb8baabf4d31933, type: 3}
       propertyPath: m_LocalPosition.x
@@ -904,7 +904,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e3866a9811fb3604cb88f79a9e66ffe6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e3866a9811fb3604cb88f79a9e66ffe6, type: 3}
       propertyPath: m_TagString
@@ -1547,7 +1547,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySFXName: Minion-L
   canJump: 0
-  attackRange: 0.5
+  attackRange: 1.5
   jumpHeight: 2
   moveSpeed: 3
   yDetectionThreshold: 2

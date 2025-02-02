@@ -5,6 +5,13 @@ public class Wepon : MonoBehaviour
     public float damage = 100f;
     public string layerToHit;
     public bool test = false;
+    public Health myHealth;
+
+    public void Start()
+    {
+        myHealth = this.transform.parent.parent.parent.parent.parent. parent.parent.parent.GetComponent<Health>();
+    }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag(layerToHit))
@@ -20,7 +27,9 @@ public class Wepon : MonoBehaviour
                 if (other.GetComponent<PlayerPowerUpCollector>().getSpikeArmor)
                 {
                     other.GetComponent<PlayerPowerUpCollector>().getSpikeArmor = false;
-                    GetComponent<Health>().TakeDamage(damage);
+                    other.GetComponent<PlayerPowerUpCollector>().disactive();
+                    myHealth.TakeDamage(damage);
+
                     return;
                 }
                 other.GetComponent<PlayerStats>().onHit(damage);

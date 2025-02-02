@@ -47,8 +47,8 @@ public class PlayerPowerUpCollector : MonoBehaviour
     }
     public void ActivateShield(PowerUpType type)
     {
-        if (type == PowerUpType.Shield) getShield = true;
-        if (type == PowerUpType.SpikeArmor) getSpikeArmor = true;
+        if (type == PowerUpType.Shield) getSpikeArmor = true;
+        if (type == PowerUpType.SpikeArmor) getShield = true;
         if (pick)
         {
             if (type == PowerUpType.Shield || type == PowerUpType.SpikeArmor)
@@ -64,7 +64,14 @@ public class PlayerPowerUpCollector : MonoBehaviour
         StartCoroutine(ShieldRoutine(type));
         
     }
-
+    public void disactive()
+    {
+        //StopAllCoroutines();
+        getShield = false;
+        getSpikeArmor = false;
+        shieldObject.SetActive(false);
+        SpikeArmorObject.SetActive(false);
+    }
 
     private System.Collections.IEnumerator ShieldRoutine(PowerUpType type)
     {

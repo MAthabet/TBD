@@ -6,8 +6,7 @@ public class PowerUp : MonoBehaviour
     [Header("Power-Up Settings")]
     [SerializeField] private string playerTag = "Player"; 
     [SerializeField] private PowerUpType powerUpType;
-    public bool getSpikeArmor = false;
-    public bool getShield = false;
+    
     
     public enum PowerUpType
     {
@@ -46,7 +45,6 @@ public class PowerUp : MonoBehaviour
             case PowerUpType.Shield:
                 //make logic
                 collector.ActivateShield(PowerUpType.Shield);
-                getShield = true;
                 //add can't take damage
 
                 break;
@@ -54,7 +52,6 @@ public class PowerUp : MonoBehaviour
             case PowerUpType.SpikeArmor:
                 //make logic
                 collector.ActivateShield(PowerUpType.SpikeArmor);
-                getSpikeArmor = true;
                 break;
 
         }

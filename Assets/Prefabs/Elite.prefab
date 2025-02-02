@@ -240,8 +240,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c8fcec2a1866ae499757a93a5b5f51e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 10
   layerToHit: Player
+  test: 0
 --- !u!65 &7289320571350394817
 BoxCollider:
   m_ObjectHideFlags: 0
