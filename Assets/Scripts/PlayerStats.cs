@@ -13,6 +13,8 @@ public class PlayerStats : MonoBehaviour
     private float currentStamina;
     public bool isDead;
 
+    [SerializeField] GameObject deathMenu;
+
     Animator animator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -61,5 +63,6 @@ public class PlayerStats : MonoBehaviour
         animator.SetTrigger("Death");
         yield return new WaitForSeconds(2.5f);
         //game over
+        deathMenu.SetActive(true);
     }
 }
