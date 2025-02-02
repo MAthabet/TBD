@@ -11,6 +11,7 @@ public class PlayerStats : MonoBehaviour
     public float currentHealth;
     public float currentMagicCharge;
     private float currentStamina;
+    public bool isDead;
 
     Animator animator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -31,12 +32,12 @@ public class PlayerStats : MonoBehaviour
     {
         currentHealth += health;
         if (currentHealth > maxHealth) currentHealth = maxHealth;
+        UiManager.Instance.UpdatePlayerHealthBar();
     }
     public void onHit(float Damage)
     {
         currentHealth -= Damage;
-       // UiManager.Instance.UpdatePlayerHealthBar();
-        //Debug.Log("health :"+ currentHealth);
+        UiManager.Instance.UpdatePlayerHealthBar();
         if (currentHealth <= 0)
         {
             Die();
@@ -49,6 +50,7 @@ public class PlayerStats : MonoBehaviour
     }
     public void Die()
     {
+        isDead = true;
         StartCoroutine(DeathRoutine());
     }
 
@@ -57,7 +59,6 @@ public class PlayerStats : MonoBehaviour
     {
         animator.SetTrigger("Death");
         yield return new WaitForSeconds(2.5f);
-
-        Destroy(gameObject);
+        //game over
     }
 }

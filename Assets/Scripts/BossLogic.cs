@@ -20,6 +20,7 @@ public class BossLogic : MonoBehaviour
 
     void Update()
     {
+        if (player == null) return;
         Vector3 newPosition = transform.position;
         float targetY = player.position.y - 19;
 

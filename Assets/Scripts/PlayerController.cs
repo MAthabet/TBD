@@ -43,6 +43,12 @@ public class PlayerController : MonoBehaviour
         if (!isAttacking)
         {
             isGrounded = Physics.Raycast(transform.position, -Vector3.up, 0.3f);
+            if(isGrounded)
+            {
+                animator.SetBool("isGrounded", true);
+            }
+            else
+                animator.SetBool("isGrounded", false);
             HandleMovement();
             HandleGravity();
         }
@@ -56,7 +62,6 @@ public class PlayerController : MonoBehaviour
         }
 
         velocity.y += gravity * Time.deltaTime;
-        Debug.Log(isGrounded + "velo"+ velocity);
 
         controller.Move(velocity * Time.deltaTime);
     }
@@ -87,7 +92,6 @@ public class PlayerController : MonoBehaviour
             animator.SetFloat("Velocity", Mathf.Abs(currentSpeed) / sprintSpeed);
             return;
         }
-        Debug.Log(isGrounded + "Cvel" + currentVelocity);
         controller.Move(currentVelocity * Time.deltaTime);
         animator.SetFloat("Velocity", Mathf.Abs(currentSpeed) / sprintSpeed);
     }
@@ -107,6 +111,7 @@ public class PlayerController : MonoBehaviour
         if (isAttacking || !isGrounded) return;
         velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
         animator.SetTrigger("jump");
+        animator.SetBool("isGrounded", false);
     }
 
     void OnAttack()
