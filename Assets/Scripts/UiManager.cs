@@ -49,9 +49,8 @@ public class UiManager : MonoBehaviour
         playerHealthSlider.maxValue = playerStats.maxHealth;
         magicChargeSlider.maxValue = playerStats.maxMagicCharge;
         bossHealthSlider.maxValue = bossLogic.MaxHP;
-
-        UpdatePlayerHealthBar();
         UpdateBossHealthBar();
+        UpdatePlayerHealthBar();
         UpdateMagicCharge();
     }
 

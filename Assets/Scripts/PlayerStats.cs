@@ -47,6 +47,7 @@ public class PlayerStats : MonoBehaviour
     void onCollectEssence()
     {
         currentMagicCharge += 10;
+        UiManager.Instance.UpdateMagicCharge();
     }
     public void Die()
     {

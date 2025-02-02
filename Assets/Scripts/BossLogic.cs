@@ -15,7 +15,6 @@ public class BossLogic : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         currentHP = MaxHP;
-        //UiManager.Instance.UpdateBossHealthBar();
     }
 
     void Update()
