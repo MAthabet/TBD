@@ -124,7 +124,7 @@ Material:
     - _Depth_Bias_Alpha: 1
     - _Depth_Contrast: 0.51
     - _DiffusionProfileHash: 0
-    - _Distortion: 0.02
+    - _Distortion: 0.5
     - _DoubleSidedEnable: 1
     - _DoubleSidedGIMode: 0
     - _DoubleSidedNormalMode: 1
@@ -133,7 +133,7 @@ Material:
     - _EnableFogOnTransparent: 1
     - _Fresnel: 3
     - _NormalStrength: 0.01
-    - _Normal_Strength: 0.522
+    - _Normal_Strength: 0.506
     - _OpaqueCullMode: 2
     - _QueueControl: 1
     - _QueueOffset: 0
@@ -185,14 +185,14 @@ Material:
     - _normalStrength: 0
     - _speed: 0.001
     m_Colors:
-    - _Deep_Water_Color: {r: 0.41941082, g: 0.4714051, b: 0.6132076, a: 0}
+    - _Deep_Water_Color: {r: 0.06345675, g: 0.5849056, b: 0.25155276, a: 0}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _Fresnel_Remap: {r: 0.66, g: 1, b: 0, a: 0}
     - _Rim_Movement: {r: 0.03, g: 0.044, b: 0, a: 0}
     - _Rim_Texture_Repeats: {r: 90, g: 90, b: 0, a: 0}
-    - _Shallow_Water_Color: {r: 0.4803756, g: 0.8018868, b: 0.8018868, a: 0}
+    - _Shallow_Water_Color: {r: 0.11414205, g: 0.27787876, b: 0.5377358, a: 0}
     - _Tiling: {r: 0.2, g: 0.2, b: 0, a: 0}
     - _fresnel_Remap: {r: 0.66, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []

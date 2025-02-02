@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 63b170c63592f314b84386af58c429f3
+guid: ae258973d9c0bbd4c8491b88a6cc8d74
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lantern_body
+    second: {fileID: 2100000, guid: 09105d94b344d6343a806b3b0e3ef3ae, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
