@@ -7766,6 +7766,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5992029061872019193, guid: 60b4ac41544013c44a79819522cd182f, type: 3}
+      propertyPath: jumpForce
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5992029061872019193, guid: 60b4ac41544013c44a79819522cd182f, type: 3}
+      propertyPath: walkSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5992029061872019193, guid: 60b4ac41544013c44a79819522cd182f, type: 3}
+      propertyPath: sprintSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7044828105308934176, guid: 60b4ac41544013c44a79819522cd182f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.88
