@@ -7,8 +7,6 @@ public class ButtonHoverManager : MonoBehaviour, IPointerEnterHandler, IPointerE
     public static ButtonHoverManager Instance;
 
     [SerializeField] private RectTransform hoverOverlay;
-    [SerializeField] private AudioClip hoverSound;   // Sound played on hover
-    //[SerializeField] private AudioClip selectSound;  // Sound played on selection
 
     private GameObject currentHoveredButton = null;
 
@@ -63,7 +61,6 @@ public class ButtonHoverManager : MonoBehaviour, IPointerEnterHandler, IPointerE
         currentHoveredButton = eventData.selectedObject;
         ShowHover(currentHoveredButton);
 
-        //PlaySound(selectSound);
     }
 
     public void OnDeselect(BaseEventData eventData)

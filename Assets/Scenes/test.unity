@@ -40282,7 +40282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8802981221271520600, guid: 6da5d1782dfdc3f4aa1383964abd30f6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -45248,10 +45248,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5021993017217839697, guid: 1446696390f78c544a62c7dbb9d39ed2, type: 3}
-      propertyPath: offset
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5021993017217839697, guid: 1446696390f78c544a62c7dbb9d39ed2, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 282955095}
@@ -45259,10 +45255,6 @@ PrefabInstance:
       propertyPath: staircaseCenter
       value: 
       objectReference: {fileID: 1849862441154513735}
-    - target: {fileID: 5021993017217839697, guid: 1446696390f78c544a62c7dbb9d39ed2, type: 3}
-      propertyPath: distanceFromCenter
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 8434308047681360821, guid: 1446696390f78c544a62c7dbb9d39ed2, type: 3}
       propertyPath: m_Name
       value: Main Camera

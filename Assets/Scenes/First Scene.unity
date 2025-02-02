@@ -8751,6 +8751,18 @@ PrefabInstance:
       value: characterUV
       objectReference: {fileID: 0}
     - target: {fileID: 8557632120471103016, guid: e5ec35284281e0244ba3901ca6d04360, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557632120471103016, guid: e5ec35284281e0244ba3901ca6d04360, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557632120471103016, guid: e5ec35284281e0244ba3901ca6d04360, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557632120471103016, guid: e5ec35284281e0244ba3901ca6d04360, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.88
       objectReference: {fileID: 0}
